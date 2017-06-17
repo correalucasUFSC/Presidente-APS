@@ -56,8 +56,8 @@ public class AtorNetGames implements OuvidorProxy {
     }
 
     @Override
-    public void iniciarNovaPartida(Integer posicao) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void iniciarNovaPartida(Integer ordem) {
+        this.owner.iniciarNovaPartida(ordem);
     }
 
     @Override
@@ -83,6 +83,19 @@ public class AtorNetGames implements OuvidorProxy {
     @Override
     public void tratarPartidaNaoIniciada(String message) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean iniciarPartida() {
+        try {
+            this.proxy.iniciarPartida(2);
+        } catch (NaoConectadoException ex) {
+            return false;
+        }
+        return true;
+    }
+
+    public String obterNomeAdversario(int ordemAdversario) {
+        return this.proxy.obterNomeAdversario(ordemAdversario);
     }
 
 }

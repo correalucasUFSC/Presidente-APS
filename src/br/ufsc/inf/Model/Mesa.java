@@ -11,4 +11,21 @@ package br.ufsc.inf.Model;
  */
 public class Mesa {
     
+    protected Jogador jogador;
+    protected Jogador adversario;
+    
+    public Mesa(){
+        
+    }
+
+    public void setJogador(Jogador jogador) {
+        this.jogador = jogador;
+    }
+
+    public void setAdversario(Jogador adversario) {
+        this.adversario = adversario;
+    }
+    
+    
+    
 }

@@ -30,8 +30,9 @@ public class AtorJogador {
         this.informarResultado(resultado);
     }
 
-    void iniciarPartida() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void iniciarPartida() {
+        int resultado = this.owner.iniciarPartida();
+        this.informarResultado(resultado);
     }
 
     public void desconectar() {
@@ -54,5 +55,9 @@ public class AtorJogador {
 
     public String obterNomeJogador() {
         return this.telaMesa.obterNomeJogador();
+    }
+
+    public void informarNomeAdversario(String nome) {
+        this.telaMesa.atualizarNomeAdversario(nome);
     }
 }

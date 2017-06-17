@@ -137,6 +137,18 @@ public class TelaMesa extends javax.swing.JFrame {
             case Constantes.JA_DESCONECTADO:
                 JOptionPane.showMessageDialog(this, Constantes.JA_DESCONECTADO_STRING);
                 break;    
+            case Constantes.FALTA_CONEXAO:
+                JOptionPane.showMessageDialog(this, Constantes.FALTA_CONEXAO_STRING);
+                break; 
+            case Constantes.JOGO_EM_ANDAMENTO:
+                JOptionPane.showMessageDialog(this, Constantes.JOGO_EM_ANDAMENTO_STRING);
+                break;   
+            case Constantes.INICIAR_PARTIDA_FALHOU:
+                JOptionPane.showMessageDialog(this, Constantes.INICIAR_PARTIDA_FALHOU_STRING);
+                break; 
+            case Constantes.SOLICITADO_INICIO_PARTIDA:
+                JOptionPane.showMessageDialog(this, Constantes.SOLICITADO_INICIO_PARTIDA_STRING);
+                break;     
         }
     }
 
@@ -149,5 +161,9 @@ public class TelaMesa extends javax.swing.JFrame {
 
     public String obterNomeJogador() {
         return JOptionPane.showInputDialog(Constantes.INSIRA_NOME_JOGADOR);
+    }
+
+    public void atualizarNomeAdversario(String nome) {
+        //TODO ATUALIZAR NOME ADVERSARIO
     }
 }

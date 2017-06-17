@@ -5,6 +5,9 @@
  */
 package br.ufsc.inf.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author lucas
@@ -12,9 +15,27 @@ package br.ufsc.inf.Model;
 public class Jogador {
     
     protected String nome;
+    protected List<Carta> mao;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Carta> getMao() {
+        return mao;
+    }
+
+    public void setMao(List<Carta> mao) {
+        this.mao = mao;
+    }
     
     public Jogador(String nome){
         this.nome = nome;
+        
     }
     
 }

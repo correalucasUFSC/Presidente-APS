@@ -11,4 +11,12 @@ package br.ufsc.inf.Model;
  */
 public class Carta {
     
+    protected int valor;
+    protected String naipe;
+    
+    public Carta(int valor, String naipe){
+        this.valor = valor;
+        this.naipe = naipe;
+    }
+    
 }
