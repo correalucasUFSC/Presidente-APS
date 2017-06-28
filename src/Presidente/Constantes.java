@@ -9,8 +9,7 @@ import br.ufsc.inf.leobr.cliente.Cliente;
  */
 
 /**
- *
- * @author lucas
+ * @author Lucas Corrêa, Thiago Pauli
  */
 public class Constantes {
 
@@ -40,7 +39,7 @@ public class Constantes {
     public static final String JOGO_EM_ANDAMENTO_STRING = "O jogo esta em andamento";
     public static final String INICIAR_PARTIDA_FALHOU_STRING = "Iniciar partida falhou";
     public static final String SOLICITADO_INICIO_PARTIDA_STRING = "Foi solicitado inicio de partida ao servidor, aguarde o outro jogador";
-    public static final String ENDERECO_SERVIDOR = "netgames.labsoft.ufsc.br";
+    public static final String ENDERECO_SERVIDOR = "localhost"; //netgames.labsoft.ufsc.br
     public static final String INSIRA_ENDERECO_SERVIDOR = "Insira o endereco do servidor";
     public static final String INSIRA_NOME_JOGADOR = "Insira o seu nome";
     //---------Strings

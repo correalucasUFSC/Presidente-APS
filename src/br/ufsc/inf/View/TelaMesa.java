@@ -6,6 +6,8 @@
 package br.ufsc.inf.View;
 
 import Presidente.Constantes;
+import br.ufsc.inf.Model.Carta;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,7 +37,9 @@ public class TelaMesa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        painelMesa = new javax.swing.JPanel();
+        cartaAdversario1 = new javax.swing.JLabel();
+        cartaAdversario2 = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuConectar = new javax.swing.JMenu();
         jMenuIniciarPartida = new javax.swing.JMenu();
@@ -43,7 +47,39 @@ public class TelaMesa extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        painelMesa.setBackground(new java.awt.Color(0, 153, 51));
+        painelMesa.setBorder(new javax.swing.border.MatteBorder(null));
+
+        cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        javax.swing.GroupLayout painelMesaLayout = new javax.swing.GroupLayout(painelMesa);
+        painelMesa.setLayout(painelMesaLayout);
+        painelMesaLayout.setHorizontalGroup(
+            painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelMesaLayout.createSequentialGroup()
+                .addGap(261, 261, 261)
+                .addComponent(cartaAdversario1)
+                .addContainerGap(817, Short.MAX_VALUE))
+            .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelMesaLayout.createSequentialGroup()
+                    .addGap(186, 186, 186)
+                    .addComponent(cartaAdversario2)
+                    .addContainerGap(892, Short.MAX_VALUE)))
+        );
+        painelMesaLayout.setVerticalGroup(
+            painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelMesaLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(cartaAdversario1)
+                .addContainerGap(489, Short.MAX_VALUE))
+            .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelMesaLayout.createSequentialGroup()
+                    .addGap(65, 65, 65)
+                    .addComponent(cartaAdversario2)
+                    .addContainerGap(488, Short.MAX_VALUE)))
+        );
 
         jMenuConectar.setText("Conectar");
         jMenuConectar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -76,16 +112,16 @@ public class TelaMesa extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel1)
-                .addContainerGap(989, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(painelMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(383, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(261, 261, 261))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(painelMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -110,11 +146,13 @@ public class TelaMesa extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel cartaAdversario1;
+    private javax.swing.JLabel cartaAdversario2;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuConectar;
     private javax.swing.JMenu jMenuDesconectar;
     private javax.swing.JMenu jMenuIniciarPartida;
+    private javax.swing.JPanel painelMesa;
     // End of variables declaration//GEN-END:variables
 
     public void informarResultado(int resultado) {
@@ -165,5 +203,13 @@ public class TelaMesa extends javax.swing.JFrame {
 
     public void atualizarNomeAdversario(String nome) {
         //TODO ATUALIZAR NOME ADVERSARIO
+    }
+
+    void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
+        
+    }
+
+    void atualizaTelaAdversario(int cartasJogador, List<Carta> cartasAdversario, List<Carta> cartasMesa) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

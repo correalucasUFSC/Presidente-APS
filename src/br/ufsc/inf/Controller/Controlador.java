@@ -11,15 +11,14 @@ import br.ufsc.inf.Model.Jogador;
 import br.ufsc.inf.Model.Mesa;
 import br.ufsc.inf.View.AtorJogador;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import rede.AtorNetGames;
 
 /**
- *
- * @author lucas
+ * @author Lucas Corrêa, Thiago Pauli
  */
+
 public class Controlador {
 
     protected AtorJogador atorJogador;
@@ -27,7 +26,7 @@ public class Controlador {
     protected Jogador jogador;
     protected Jogador adversario;
     protected Mesa mesa;
-    protected int ordem;
+    protected int ordem = 0;
     protected int ordemAdversario;
     protected boolean conectado;
     protected boolean jogoEmAndamento;
@@ -38,11 +37,12 @@ public class Controlador {
         this.jogoEmAndamento = false;
         this.atorJogador = new AtorJogador(this);
         this.atorNetGames = new AtorNetGames(this);
-
         this.atorJogador.mostraInterface();
-
     }
 
+    /** Método para conectar
+     * @return int
+     */
     public int conectar() {
         if (this.conectado) {
             return Constantes.JA_CONECTADO;
@@ -59,6 +59,9 @@ public class Controlador {
         }
     }
 
+    /** Método para desconectar
+     * @return int
+     */
     public int desconectar() {
         if (this.conectado) {
             boolean desconectado = this.atorNetGames.desconectar();
@@ -72,6 +75,9 @@ public class Controlador {
         }
     }
 
+    /** Método para iniciar a partida
+     * @return int
+     */
     public int iniciarPartida() {
         if (this.conectado) {
             if (this.jogoEmAndamento) {
@@ -89,12 +95,13 @@ public class Controlador {
         }
     }
 
+    /** Método para iniciar nova partida
+     * @param ordem Integer - Ordem dos jogadores.
+     */
     public void iniciarNovaPartida(Integer ordem) {
         this.limpar();
         this.setOrdens(ordem);
-        String nomeAdversario = this.atorNetGames.
-                    obterNomeAdversario(this.ordemAdversario);
-
+        String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
         if (this.ordem == 1) {
             this.adversario = new Jogador(nomeAdversario);
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
@@ -106,17 +113,36 @@ public class Controlador {
             this.adversario.setMao(maoJogador2);
             this.mesa.setJogador(this.jogador);
             this.mesa.setAdversario(this.adversario);
+            this.atorNetGames.enviarJogada(this.mesa);
         }
-        
-
+    }
+    
+    /** Método para receber jogada
+     * @param mesa Mesa - Recebe a mesa inteira do outro jogador.
+     */
+    public void receberJogada(Mesa mesa){
+        if(this.ordem != 0){
+            this.mesa = mesa;
+            this.atorJogador.atualizaTelaPosJogada(mesa);
+        } else {
+            this.mesa = mesa;
+            this.adversario = this.mesa.getAdversario();
+            this.jogador = this.mesa.getJogador();
+            this.setOrdens(2);
+            this.atorJogador.atualizaTelaPosJogada(mesa);
+        }
     }
 
+    /** Método para limpar tudo */
     private void limpar() {
         this.adversario = null;
         this.jogoEmAndamento = false;
         this.mesa = new Mesa();
     }
 
+    /** Método para criar baralho
+     * @return List<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
+     */
     private List<Carta> criaBaralho() {
         List<Carta> baralho = new ArrayList<>();
         String[] naipes = {"A", "B", "C", "D"};
@@ -128,11 +154,19 @@ public class Controlador {
         return baralho;
     }
 
+    /** Método para embaralhar o baralho.
+     * @return List<Carta> - Baralho completo embaralhado.
+     */
     private List<Carta> embaralha(List<Carta> baralho) {
         Collections.shuffle(baralho);
         return baralho;
     }
 
+    /** Método para distribuir a mão para jogador.
+     * @param ordem int - Ordem do jogador.
+     * @param baralho List<Carta> - Baralho de cartas.
+     * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a mão do jogador).
+     */
     private List<Carta> distribuiMao(int ordem, List<Carta> baralho) {
         if (ordem == 1) {
             return baralho.subList(0, 17);
@@ -141,13 +175,23 @@ public class Controlador {
         }
     }
 
+    /** Método para descobrir se é o jogador da vez.
+     * @return boolean - Verifica se ordem é igual a 1.
+     */
     private boolean isDaVez() {
         return this.ordem == 1;
     }
 
+
+    /** Método para setar a ordem dos jogadores.
+     * @param ordem int - Ordem dos jogadores.
+     */
     private void setOrdens(int ordem) {
         this.ordem = ordem;
         this.ordemAdversario = this.ordem == 1 ? 2 : 1;
     }
 
+    public int getOrdem() {
+        return this.ordem;
+    }
 }

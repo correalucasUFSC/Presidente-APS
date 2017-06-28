@@ -6,8 +6,7 @@
 package br.ufsc.inf.Model;
 
 /**
- *
- * @author lucas
+ * @author Lucas Corrêa, Thiago Pauli
  */
 public class Carta {
     

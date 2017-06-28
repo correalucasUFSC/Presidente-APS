@@ -3,21 +3,13 @@ package Presidente;
 
 import br.ufsc.inf.Controller.Controlador;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 /**
- *
- * @author lucas
+ * @author Lucas Corrêa, Thiago Pauli
  */
 public class Presidente {
 
     /**
-     * @param args the command line arguments
+     * @param args String[] - Argumentos na linha de comando
      */
     public static void main(String[] args) {
         // TODO code application logic here

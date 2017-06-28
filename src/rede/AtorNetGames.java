@@ -6,12 +6,14 @@
 package rede;
 
 import br.ufsc.inf.Controller.Controlador;
+import br.ufsc.inf.Model.Mesa;
 import br.ufsc.inf.leobr.cliente.Jogada;
 import br.ufsc.inf.leobr.cliente.OuvidorProxy;
 import br.ufsc.inf.leobr.cliente.Proxy;
 import br.ufsc.inf.leobr.cliente.exception.ArquivoMultiplayerException;
 import br.ufsc.inf.leobr.cliente.exception.JahConectadoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoConectadoException;
+import br.ufsc.inf.leobr.cliente.exception.NaoJogandoException;
 import br.ufsc.inf.leobr.cliente.exception.NaoPossivelConectarException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,12 +71,6 @@ public class AtorNetGames implements OuvidorProxy {
     public void receberMensagem(String msg) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public void receberJogada(Jogada jogada) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public void tratarConexaoPerdida() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -96,6 +92,26 @@ public class AtorNetGames implements OuvidorProxy {
 
     public String obterNomeAdversario(int ordemAdversario) {
         return this.proxy.obterNomeAdversario(ordemAdversario);
+    }
+
+    @Override
+    public void receberJogada(Jogada jogada) {
+        Mesa mesa = (Mesa) jogada;
+        this.owner.receberJogada(mesa);
+    }
+
+    
+    public boolean enviarJogada(Jogada jogada) {
+        try {
+            this.proxy.enviaJogada(jogada);
+            return true;
+        } catch (NaoJogandoException e) {
+            System.out.println("NAO JOGANDO");
+            return false;
+        } catch (Exception e) {
+            System.out.println("OUTRO ERRO");
+            return false;
+        }
     }
 
 }
