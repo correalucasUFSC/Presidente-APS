@@ -7,6 +7,7 @@ package br.ufsc.inf.View;
 
 import Presidente.Constantes;
 import br.ufsc.inf.Model.Carta;
+import java.net.URL;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -17,7 +18,7 @@ import javax.swing.JOptionPane;
 public class TelaMesa extends javax.swing.JFrame {
 
     protected AtorJogador atorJogador;
-   
+    protected static String EXTENSAO_CARTA = ".png";
     
     /**
      * Creates new form TElaMesa
@@ -26,6 +27,11 @@ public class TelaMesa extends javax.swing.JFrame {
         initComponents();
         this.atorJogador = atorJogador;
         
+    }
+    
+    
+    private String getImagemCarta(String caminho) {
+	return Constantes.IMAGE_PATH + caminho + EXTENSAO_CARTA;
     }
 
     /**

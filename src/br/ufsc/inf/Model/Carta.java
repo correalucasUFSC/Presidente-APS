@@ -18,4 +18,8 @@ public class Carta {
         this.naipe = naipe;
     }
     
+    public String getCaminho(){
+        return this.valor + this.naipe;
+    }
+    
 }

@@ -42,6 +42,7 @@ public class Constantes {
     public static final String ENDERECO_SERVIDOR = "localhost"; //netgames.labsoft.ufsc.br
     public static final String INSIRA_ENDERECO_SERVIDOR = "Insira o endereco do servidor";
     public static final String INSIRA_NOME_JOGADOR = "Insira o seu nome";
+    public static final String IMAGE_PATH = "/br/ufsc/inf/view/imgs/";
     //---------Strings
     
     
