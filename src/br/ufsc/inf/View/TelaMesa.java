@@ -38,8 +38,30 @@ public class TelaMesa extends javax.swing.JFrame {
     private void initComponents() {
 
         painelMesa = new javax.swing.JPanel();
+        cartaAdversario0 = new javax.swing.JLabel();
         cartaAdversario1 = new javax.swing.JLabel();
         cartaAdversario2 = new javax.swing.JLabel();
+        cartaAdversario3 = new javax.swing.JLabel();
+        cartaAdversario4 = new javax.swing.JLabel();
+        cartaAdversario5 = new javax.swing.JLabel();
+        cartaAdversario6 = new javax.swing.JLabel();
+        cartaAdversario7 = new javax.swing.JLabel();
+        cartaAdversario8 = new javax.swing.JLabel();
+        cartaAdversario9 = new javax.swing.JLabel();
+        cartaJogador0 = new javax.swing.JLabel();
+        cartaJogador1 = new javax.swing.JLabel();
+        cartaJogador2 = new javax.swing.JLabel();
+        cartaJogador3 = new javax.swing.JLabel();
+        cartaJogador4 = new javax.swing.JLabel();
+        cartaJogador5 = new javax.swing.JLabel();
+        cartaJogador6 = new javax.swing.JLabel();
+        cartaJogador7 = new javax.swing.JLabel();
+        cartaJogador8 = new javax.swing.JLabel();
+        cartaJogador9 = new javax.swing.JLabel();
+        cartaMesa0 = new javax.swing.JLabel();
+        cartaMesa1 = new javax.swing.JLabel();
+        cartaMesa3 = new javax.swing.JLabel();
+        cartaMesa2 = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuConectar = new javax.swing.JMenu();
         jMenuIniciarPartida = new javax.swing.JMenu();
@@ -50,35 +72,147 @@ public class TelaMesa extends javax.swing.JFrame {
         painelMesa.setBackground(new java.awt.Color(0, 153, 51));
         painelMesa.setBorder(new javax.swing.border.MatteBorder(null));
 
+        cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
         cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
 
         cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
+
+        cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/10A.png"))); // NOI18N
 
         javax.swing.GroupLayout painelMesaLayout = new javax.swing.GroupLayout(painelMesa);
         painelMesa.setLayout(painelMesaLayout);
         painelMesaLayout.setHorizontalGroup(
             painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMesaLayout.createSequentialGroup()
-                .addGap(261, 261, 261)
-                .addComponent(cartaAdversario1)
-                .addContainerGap(817, Short.MAX_VALUE))
-            .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(painelMesaLayout.createSequentialGroup()
-                    .addGap(186, 186, 186)
-                    .addComponent(cartaAdversario2)
-                    .addContainerGap(892, Short.MAX_VALUE)))
+                .addGap(223, 223, 223)
+                .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelMesaLayout.createSequentialGroup()
+                        .addComponent(cartaJogador0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaJogador9))
+                    .addGroup(painelMesaLayout.createSequentialGroup()
+                        .addComponent(cartaAdversario0)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaAdversario1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cartaAdversario2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelMesaLayout.createSequentialGroup()
+                                .addComponent(cartaMesa0)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaMesa1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaMesa2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaMesa3))
+                            .addGroup(painelMesaLayout.createSequentialGroup()
+                                .addComponent(cartaAdversario3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cartaAdversario9)))))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
         painelMesaLayout.setVerticalGroup(
             painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMesaLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(cartaAdversario1)
-                .addContainerGap(489, Short.MAX_VALUE))
-            .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(painelMesaLayout.createSequentialGroup()
-                    .addGap(65, 65, 65)
+                .addGap(46, 46, 46)
+                .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartaAdversario8)
+                    .addComponent(cartaAdversario9)
+                    .addComponent(cartaAdversario7)
+                    .addComponent(cartaAdversario6)
+                    .addComponent(cartaAdversario5)
+                    .addComponent(cartaAdversario3)
+                    .addComponent(cartaAdversario4)
                     .addComponent(cartaAdversario2)
-                    .addContainerGap(488, Short.MAX_VALUE)))
+                    .addComponent(cartaAdversario0)
+                    .addComponent(cartaAdversario1))
+                .addGap(151, 151, 151)
+                .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartaMesa3)
+                    .addComponent(cartaMesa2)
+                    .addComponent(cartaMesa0)
+                    .addComponent(cartaMesa1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartaJogador8)
+                    .addComponent(cartaJogador9)
+                    .addComponent(cartaJogador7)
+                    .addComponent(cartaJogador6)
+                    .addComponent(cartaJogador5)
+                    .addComponent(cartaJogador3)
+                    .addComponent(cartaJogador4)
+                    .addComponent(cartaJogador2)
+                    .addComponent(cartaJogador0)
+                    .addComponent(cartaJogador1))
+                .addGap(43, 43, 43))
         );
 
         jMenuConectar.setText("Conectar");
@@ -146,8 +280,30 @@ public class TelaMesa extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel cartaAdversario0;
     private javax.swing.JLabel cartaAdversario1;
     private javax.swing.JLabel cartaAdversario2;
+    private javax.swing.JLabel cartaAdversario3;
+    private javax.swing.JLabel cartaAdversario4;
+    private javax.swing.JLabel cartaAdversario5;
+    private javax.swing.JLabel cartaAdversario6;
+    private javax.swing.JLabel cartaAdversario7;
+    private javax.swing.JLabel cartaAdversario8;
+    private javax.swing.JLabel cartaAdversario9;
+    private javax.swing.JLabel cartaJogador0;
+    private javax.swing.JLabel cartaJogador1;
+    private javax.swing.JLabel cartaJogador2;
+    private javax.swing.JLabel cartaJogador3;
+    private javax.swing.JLabel cartaJogador4;
+    private javax.swing.JLabel cartaJogador5;
+    private javax.swing.JLabel cartaJogador6;
+    private javax.swing.JLabel cartaJogador7;
+    private javax.swing.JLabel cartaJogador8;
+    private javax.swing.JLabel cartaJogador9;
+    private javax.swing.JLabel cartaMesa0;
+    private javax.swing.JLabel cartaMesa1;
+    private javax.swing.JLabel cartaMesa2;
+    private javax.swing.JLabel cartaMesa3;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuConectar;
     private javax.swing.JMenu jMenuDesconectar;
