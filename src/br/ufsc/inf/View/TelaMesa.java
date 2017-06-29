@@ -517,22 +517,44 @@ public class TelaMesa extends javax.swing.JFrame {
         //TODO ATUALIZAR NOME ADVERSARIO
     }
     
+    /**
+     * Método para criar o caminho das imagens.
+     * @param caminho Usar carta.getCaminho().
+     * @return Caminho da imagem da carta.
+     */
     private String getImagemCarta(String caminho) {
 	return Constantes.IMAGE_PATH + caminho + EXTENSAO_CARTA;
     }
 
+    /**
+     * Método para atualizar a tela do Jogador.
+     * @param cartasJogador Lista de cartas do Jogador.
+     * @param cartasAdversario Quantidade de cartas do Adversário.
+     * @param cartasMesa Lista de cartas da mesa.
+     */
     public void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
         escondeCartas("adversario", cartasAdversario);
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("jogador", cartasJogador);
     }
 
+    /**
+     * Método para atualizar a tela do Adversário.
+     * @param cartasJogador Quantidade de cartas do Jogador.
+     * @param cartasAdversario Lista de cartas do Adversário.
+     * @param cartasMesa Lista de cartas da mesa.
+     */
     public void atualizaTelaAdversario(int cartasJogador, List<Carta> cartasAdversario, List<Carta> cartasMesa) {
         escondeCartas("jogador", cartasJogador);
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("adversario", cartasAdversario);        
     }
     
+    /**
+     * Método para esconder as cartas do oponente.
+     * @param jogador Utilize "jogador" ou "adversario", ele vai esconder do escolhido aqui.
+     * @param tamanho Quantidade de cartas que o oponente tem na mão.
+     */
     private void escondeCartas(String jogador, int tamanho){
         if(jogador.toLowerCase().equals("adversario")){
             if(tamanho == 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
@@ -559,6 +581,10 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Método para colocar as cartas jogadas na mesa.
+     * @param cartasMesa Lista das cartas da mesa.
+     */
     private void colocaCartasDaMesa(List<Carta> cartasMesa){
         int tamanho = cartasMesa.size();
         if(tamanho == 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
@@ -567,6 +593,11 @@ public class TelaMesa extends javax.swing.JFrame {
         if(tamanho == 4) cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
     }
     
+    /**
+     * Método para colocar no campo as cartas do jogador.
+     * @param jogador Utilize "jogador" ou "adversario".
+     * @param cartasMao Lista de cartas.
+     */
     private void colocaCartasDaMao(String jogador, List<Carta> cartasMao){
         int tamanho = cartasMao.size();
         if(jogador.toLowerCase().equals("adversario")){
@@ -594,6 +625,11 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Pega a carta clicada e marca um X vermelho nela, tambem serve para desmarcar.
+     * Para desmarcação ele identifica pelo "X" no getText().
+     * @param carta Carta clicada.
+     */
     private void cartaClicada(javax.swing.JLabel carta){
         String posicao = carta.getToolTipText();
         if(carta.getText().equals("X")){
@@ -604,17 +640,29 @@ public class TelaMesa extends javax.swing.JFrame {
             carta.setText("X");         
         }
     }
-    
+
+    /**
+     * Método para trocar o nome do jogador.
+     * @param nome Nome do jogador.
+     */    
     public void trocaNomeJogador(String nome) {
         this.nomeJogador.setText(nome);
     }
     
+    /**
+     * Método para trocar o nome do adversario.
+     * @param nome Nome do jogador.
+     */
     public void trocaNomeAdversario(String nome) {
         this.nomeAdversario.setText(nome);
     }
     
-    public void trocaPresidente(String jogador) {
-        if(jogador.equals("jogador")) {
+    /**
+     * Metodo para adicionar/trocar o presidente e cu, selecione o presidente que ele define sozinho o cu.
+     * @param presidente Passe "jogador" ou "adversario" para ser o presidente.
+     */
+    public void trocaPresidente(String presidente) {
+        if(presidente.equals("jogador")) {
             this.tipoJogador.setText("PRESIDENTE");
             this.tipoAdversario.setText("CU"); 
         } else {
@@ -623,6 +671,11 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Metodo para aumentar a quantidade de vitórias na tela.
+     * @param jogador Passe "jogador" ou "adversario".
+     * @param quantidade Quantidade de vitórias atual.
+     */
     public void aumentaVitoria(String jogador, int quantidade) {  
         String texto = quantidade == 1 ? " vitória" : " vitórias";      
         if(jogador.equals("jogador")) {
