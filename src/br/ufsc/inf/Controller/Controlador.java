@@ -105,10 +105,10 @@ public class Controlador {
         if (this.ordem == 1) {
             this.adversario = new Jogador(nomeAdversario);
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
-            List<Carta> baralho = this.criaBaralho();
+            ArrayList<Carta> baralho = this.criaBaralho();
             baralho = this.embaralha(baralho);
-            List<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
-            List<Carta> maoJogador2 = this.distribuiMao(2, baralho);
+            ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
+            ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
             this.jogador.setMao(maoJogador1);
             this.adversario.setMao(maoJogador2);
             this.mesa.setJogador(this.jogador);
@@ -143,8 +143,8 @@ public class Controlador {
     /** Método para criar baralho
      * @return List<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
      */
-    private List<Carta> criaBaralho() {
-        List<Carta> baralho = new ArrayList<>();
+    private ArrayList<Carta> criaBaralho() {
+        ArrayList<Carta> baralho = new ArrayList<>();
         String[] naipes = {"A", "B", "C", "D"};
         for (int valor = 14; valor > 0; valor--) {
             for (int naipe = 0; naipe < 4; naipe++) {
@@ -157,7 +157,7 @@ public class Controlador {
     /** Método para embaralhar o baralho.
      * @return List<Carta> - Baralho completo embaralhado.
      */
-    private List<Carta> embaralha(List<Carta> baralho) {
+    private ArrayList<Carta> embaralha(ArrayList<Carta> baralho) {
         Collections.shuffle(baralho);
         return baralho;
     }
@@ -167,11 +167,11 @@ public class Controlador {
      * @param baralho List<Carta> - Baralho de cartas.
      * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a mão do jogador).
      */
-    private List<Carta> distribuiMao(int ordem, List<Carta> baralho) {
+    private ArrayList<Carta> distribuiMao(int ordem, ArrayList<Carta> baralho) {
         if (ordem == 1) {
-            return baralho.subList(0, 17);
+            return (ArrayList) baralho.subList(0, 17);
         } else {
-            return baralho.subList(20, 37);
+            return (ArrayList) baralho.subList(20, 37);
         }
     }
 

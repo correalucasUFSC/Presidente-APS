@@ -5,10 +5,12 @@
  */
 package br.ufsc.inf.Model;
 
+import br.ufsc.inf.leobr.cliente.Jogada;
+
 /**
  * @author Lucas Corrêa, Thiago Pauli
  */
-public class Carta {
+public class Carta implements Jogada{
     
     protected int valor;
     protected String naipe;

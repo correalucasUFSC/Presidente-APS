@@ -5,16 +5,16 @@
  */
 package br.ufsc.inf.Model;
 
+import br.ufsc.inf.leobr.cliente.Jogada;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Lucas Corrêa, Thiago Pauli
  */
-public class Jogador {
+public class Jogador implements Jogada {
     
     protected String nome;
-    protected List<Carta> mao;
+    protected ArrayList<Carta> mao;
     protected int rodadasGanhas;
     protected boolean ehPresidente;
     
@@ -44,14 +44,14 @@ public class Jogador {
     /** Método para pegar a mão do jogador.
      * @return List(Carta) - Mão do jogador.
      */
-    public List<Carta> getMao() {
+    public ArrayList<Carta> getMao() {
         return mao;
     }
 
     /** Método para setar a mão do jogador.
      * @param mao List(Carta) - Mão do jogador.
      */
-    public void setMao(List<Carta> mao) {
+    public void setMao(ArrayList<Carta> mao) {
         this.mao = mao;
     }
 

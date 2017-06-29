@@ -6,7 +6,7 @@
 package br.ufsc.inf.Model;
 
 import br.ufsc.inf.leobr.cliente.Jogada;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * @author Lucas Corrêa, Thiago Pauli
@@ -20,7 +20,7 @@ public class Mesa implements Jogada {
     protected Jogador vendedorUltimaRodada;
     protected int rodadaAtual;
     protected Jogador daVez;
-    protected List<Carta> cartasDaMesa;  
+    protected ArrayList<Carta> cartasDaMesa;  
     
     public Mesa(){
         
@@ -61,7 +61,7 @@ public class Mesa implements Jogada {
     /** Método para recuperar cartas que estão na mesa.
      * @return List(Carta) - Cartas jogadas na mesa.
      */
-    public List<Carta> getCartasMesa() {
+    public ArrayList<Carta> getCartasMesa() {
         return cartasDaMesa;
     }
     

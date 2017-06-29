@@ -27,11 +27,7 @@ public class TelaMesa extends javax.swing.JFrame {
         initComponents();
         this.atorJogador = atorJogador;
         
-    }    
-    
-    private String getImagemCarta(String caminho) {
-	return Constantes.IMAGE_PATH + caminho + EXTENSAO_CARTA;
-    }
+    }   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,8 +64,12 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaMesa3 = new javax.swing.JLabel();
         cartaMesa2 = new javax.swing.JLabel();
         nomeAdversario = new javax.swing.JLabel();
+        tipoAdversario = new javax.swing.JLabel();
         nomeJogador = new javax.swing.JLabel();
+        tipoJogador = new javax.swing.JLabel();
         fazerJogada = new javax.swing.JButton();
+        vitoriaAdversario = new javax.swing.JLabel();
+        vitoriaJogador = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuConectar = new javax.swing.JMenu();
         jMenuIniciarPartida = new javax.swing.JMenu();
@@ -80,65 +80,125 @@ public class TelaMesa extends javax.swing.JFrame {
         painelMesa.setBackground(new java.awt.Color(0, 153, 51));
         painelMesa.setBorder(new javax.swing.border.MatteBorder(null));
 
+        cartaAdversario0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario0.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario0.setToolTipText("0");
+        cartaAdversario0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario1.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario1.setToolTipText("1");
+        cartaAdversario1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario2.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario2.setToolTipText("2");
+        cartaAdversario2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario3.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario3.setToolTipText("3");
+        cartaAdversario3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario4.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario4.setToolTipText("4");
+        cartaAdversario4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario5.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario5.setToolTipText("5");
+        cartaAdversario5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario6.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario6.setToolTipText("6");
+        cartaAdversario6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario7.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario7.setToolTipText("7");
+        cartaAdversario7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario8.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario8.setToolTipText("8");
+        cartaAdversario8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaAdversario9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaAdversario9.setForeground(new java.awt.Color(255, 0, 0));
         cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario9.setToolTipText("9");
+        cartaAdversario9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador0.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador0.setToolTipText("0");
+        cartaJogador0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador1.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador1.setToolTipText("1");
+        cartaJogador1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador2.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador2.setToolTipText("2");
+        cartaJogador2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador3.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador3.setToolTipText("3");
+        cartaJogador3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador4.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador4.setToolTipText("4");
+        cartaJogador4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador5.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador5.setToolTipText("5");
+        cartaJogador5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador6.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador6.setToolTipText("6");
+        cartaJogador6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador7.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador7.setToolTipText("7");
+        cartaJogador7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador8.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador8.setToolTipText("8");
+        cartaJogador8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        cartaJogador9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
+        cartaJogador9.setForeground(new java.awt.Color(255, 0, 0));
         cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador9.setToolTipText("9");
+        cartaJogador9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
 
@@ -149,22 +209,46 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
 
         nomeAdversario.setForeground(new java.awt.Color(255, 255, 255));
+        nomeAdversario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nomeAdversario.setText("Jogador2");
 
+        tipoAdversario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tipoAdversario.setForeground(new java.awt.Color(255, 255, 51));
+        tipoAdversario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        tipoAdversario.setText("PRESIDENTE");
+
         nomeJogador.setForeground(new java.awt.Color(255, 255, 255));
+        nomeJogador.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         nomeJogador.setText("Jogador1");
 
+        tipoJogador.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        tipoJogador.setForeground(new java.awt.Color(255, 255, 51));
+        tipoJogador.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        tipoJogador.setText("PRESIDENTE");
+
         fazerJogada.setText("Fazer jogada");
+
+        vitoriaAdversario.setForeground(new java.awt.Color(0, 204, 0));
+        vitoriaAdversario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        vitoriaAdversario.setText("0 vitórias");
+
+        vitoriaJogador.setForeground(new java.awt.Color(0, 204, 0));
+        vitoriaJogador.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        vitoriaJogador.setText("0 vitórias");
 
         javax.swing.GroupLayout painelMesaLayout = new javax.swing.GroupLayout(painelMesa);
         painelMesa.setLayout(painelMesaLayout);
         painelMesaLayout.setHorizontalGroup(
             painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelMesaLayout.createSequentialGroup()
-                .addGap(171, 171, 171)
+                .addGap(150, 150, 150)
                 .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(nomeAdversario)
-                    .addComponent(nomeJogador))
+                    .addComponent(nomeJogador)
+                    .addComponent(tipoJogador)
+                    .addComponent(tipoAdversario)
+                    .addComponent(vitoriaAdversario)
+                    .addComponent(vitoriaJogador))
                 .addGap(18, 18, 18)
                 .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelMesaLayout.createSequentialGroup()
@@ -217,7 +301,7 @@ public class TelaMesa extends javax.swing.JFrame {
                                 .addComponent(cartaMesa2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cartaMesa3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                                 .addComponent(fazerJogada)))))
                 .addGap(122, 122, 122))
         );
@@ -250,8 +334,12 @@ public class TelaMesa extends javax.swing.JFrame {
                                 .addGap(177, 177, 177)
                                 .addComponent(fazerJogada))))
                     .addGroup(painelMesaLayout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(nomeAdversario)))
+                        .addGap(58, 58, 58)
+                        .addComponent(tipoAdversario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeAdversario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vitoriaAdversario)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMesaLayout.createSequentialGroup()
@@ -268,8 +356,12 @@ public class TelaMesa extends javax.swing.JFrame {
                             .addComponent(cartaJogador1))
                         .addGap(43, 43, 43))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMesaLayout.createSequentialGroup()
+                        .addComponent(tipoJogador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(nomeJogador)
-                        .addGap(77, 77, 77))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(vitoriaJogador)
+                        .addGap(57, 57, 57))))
         );
 
         jMenuConectar.setText("Conectar");
@@ -369,6 +461,10 @@ public class TelaMesa extends javax.swing.JFrame {
     private javax.swing.JLabel nomeAdversario;
     private javax.swing.JLabel nomeJogador;
     private javax.swing.JPanel painelMesa;
+    private javax.swing.JLabel tipoAdversario;
+    private javax.swing.JLabel tipoJogador;
+    private javax.swing.JLabel vitoriaAdversario;
+    private javax.swing.JLabel vitoriaJogador;
     // End of variables declaration//GEN-END:variables
 
     public void informarResultado(int resultado) {
@@ -420,12 +516,110 @@ public class TelaMesa extends javax.swing.JFrame {
     public void atualizarNomeAdversario(String nome) {
         //TODO ATUALIZAR NOME ADVERSARIO
     }
-
-    void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
-        
+    
+    private String getImagemCarta(String caminho) {
+	return Constantes.IMAGE_PATH + caminho + EXTENSAO_CARTA;
     }
 
-    void atualizaTelaAdversario(int cartasJogador, List<Carta> cartasAdversario, List<Carta> cartasMesa) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
+        escondeCartas("adversario", cartasAdversario);
+        colocaCartasDaMesa(cartasMesa);
+        colocaCartasDaMao("jogador", cartasJogador);
+    }
+
+    public void atualizaTelaAdversario(int cartasJogador, List<Carta> cartasAdversario, List<Carta> cartasMesa) {
+        escondeCartas("jogador", cartasJogador);
+        colocaCartasDaMesa(cartasMesa);
+        colocaCartasDaMao("adversario", cartasAdversario);        
+    }
+    
+    private void escondeCartas(String jogador, int tamanho){
+        if(jogador.toLowerCase().equals("adversario")){
+            if(tamanho == 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+        } else if(jogador.toLowerCase().equals("jogador")){
+            if(tamanho == 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho == 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));            
+        }
+    }
+    
+    private void colocaCartasDaMesa(List<Carta> cartasMesa){
+        int tamanho = cartasMesa.size();
+        if(tamanho == 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
+        if(tamanho == 2) cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
+        if(tamanho == 3) cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(2).getCaminho()))));
+        if(tamanho == 4) cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
+    }
+    
+    private void colocaCartasDaMao(String jogador, List<Carta> cartasMao){
+        int tamanho = cartasMao.size();
+        if(jogador.toLowerCase().equals("adversario")){
+            if(tamanho == 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
+            if(tamanho == 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
+            if(tamanho == 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
+            if(tamanho == 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
+            if(tamanho == 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
+            if(tamanho == 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
+            if(tamanho == 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
+            if(tamanho == 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
+            if(tamanho == 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
+            if(tamanho == 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));
+        } else if(jogador.toLowerCase().equals("jogador")){
+            if(tamanho == 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
+            if(tamanho == 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
+            if(tamanho == 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
+            if(tamanho == 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
+            if(tamanho == 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
+            if(tamanho == 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
+            if(tamanho == 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
+            if(tamanho == 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
+            if(tamanho == 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
+            if(tamanho == 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));        
+        }
+    }
+    
+    private void cartaClicada(javax.swing.JLabel carta){
+        String posicao = carta.getToolTipText();
+        if(carta.getText().equals("X")){
+            //tiraSeleção
+            carta.setText("");            
+        } else {
+            //envia posição selecionada   
+            carta.setText("X");         
+        }
+    }
+    
+    public void trocaNomeJogador(String nome) {
+        this.nomeJogador.setText(nome);
+    }
+    
+    public void trocaNomeAdversario(String nome) {
+        this.nomeAdversario.setText(nome);
+    }
+    
+    public void trocaPresidente(String jogador) {
+        if(jogador.equals("jogador")) {
+            this.tipoJogador.setText("PRESIDENTE");
+            this.tipoAdversario.setText("CU"); 
+        } else {
+            this.tipoJogador.setText("CU");
+            this.tipoAdversario.setText("PRESIDENTE");
+        }
     }
 }
