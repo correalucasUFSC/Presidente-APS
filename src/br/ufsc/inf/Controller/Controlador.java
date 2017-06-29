@@ -30,6 +30,7 @@ public class Controlador {
     protected int ordemAdversario;
     protected boolean conectado;
     protected boolean jogoEmAndamento;
+    protected boolean daVez = false;
 
     public Controlador() {
         this.mesa = new Mesa();
@@ -103,6 +104,7 @@ public class Controlador {
         this.setOrdens(ordem);
         String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
         if (this.ordem == 1) {
+            this.daVez = true;
             this.adversario = new Jogador(nomeAdversario);
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
             List<Carta> baralho = this.criaBaralho();
@@ -169,17 +171,17 @@ public class Controlador {
      */
     private List<Carta> distribuiMao(int ordem, List<Carta> baralho) {
         if (ordem == 1) {
-            return baralho.subList(0, 17);
+            return baralho.subList(0, 9);
         } else {
-            return baralho.subList(20, 37);
+            return baralho.subList(20, 29);
         }
     }
 
     /** Método para descobrir se é o jogador da vez.
      * @return boolean - Verifica se ordem é igual a 1.
      */
-    private boolean isDaVez() {
-        return this.ordem == 1;
+    public boolean isDaVez() {
+        return this.daVez;
     }
 
 
@@ -193,5 +195,9 @@ public class Controlador {
 
     public int getOrdem() {
         return this.ordem;
+    }
+    
+    public Mesa getMesa() {
+        return this.mesa;
     }
 }

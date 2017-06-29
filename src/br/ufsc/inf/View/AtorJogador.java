@@ -8,6 +8,7 @@ package br.ufsc.inf.View;
 import br.ufsc.inf.Controller.Controlador;
 import br.ufsc.inf.Model.Carta;
 import br.ufsc.inf.Model.Mesa;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,10 +22,6 @@ public class AtorJogador {
     public AtorJogador(Controlador controlador) {
         this.telaMesa = new TelaMesa(this);
         this.owner = controlador;
-    }
-
-    public void click(String acao) {
-        
     }
 
     public void conectar() {
@@ -61,6 +58,56 @@ public class AtorJogador {
 
     public void informarNomeAdversario(String nome) {
         this.telaMesa.atualizarNomeAdversario(nome);
+    }
+    
+    public void clickCarta(List<Carta> mao, int posicao){
+        Carta cartaSelecionada = mao.get(posicao);  
+        if(cartaSelecionada.isSelecionada()){
+               cartaSelecionada.tiraSelecao();
+           }
+           else{
+               cartaSelecionada.seleciona();
+           }
+    }
+    
+    public void tratarJogada(){
+        List<Carta> selecionadas = new ArrayList<>();
+        if(this.owner.isDaVez()){            
+            if(this.owner.getOrdem() == 1){
+                List<Carta> mao = this.owner.getMesa().getJogador().getMao();
+                for(Carta carta : mao){
+                    if(carta.isSelecionada()){
+                        selecionadas.add(carta);
+                        if()
+                    }
+                }
+            }
+            else{
+                List<Carta> mao = this.owner.getMesa().getAdversario().getMao();
+                for(Carta carta : mao){
+                    if(carta.isSelecionada()){
+                        selecionadas.add(carta);
+                    }
+                }
+            }
+        }
+        else{
+            //Não é a sua vez!
+        }
+    }
+    
+    public void jogadorSelecionouPosicao(int posicao){
+       if(this.owner.getOrdem() == 1){
+           List<Carta> mao = this.owner.getMesa().getJogador().getMao();
+           this.clickCarta(mao, posicao);
+       } 
+    }
+    
+    public void adversarioSelecionouPosicao(int posicao){
+        if(this.owner.getOrdem() == 2){
+            List<Carta> mao = this.owner.getMesa().getAdversario().getMao();
+            this.clickCarta(mao, posicao);
+        }
     }
     
     public void atualizaTelaPosJogada(Mesa mesa){

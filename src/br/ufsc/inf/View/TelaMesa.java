@@ -367,7 +367,7 @@ public class TelaMesa extends javax.swing.JFrame {
         //TODO ATUALIZAR NOME ADVERSARIO
     }
 
-    void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
+    public void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
         
     }
 
