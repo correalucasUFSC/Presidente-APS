@@ -88,7 +88,12 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="nomeAdversario" min="-2" max="-2" attributes="0"/>
+                      <Component id="nomeJogador" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="cartaJogador0" min="-2" max="-2" attributes="0"/>
@@ -120,15 +125,6 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="cartaMesa0" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cartaMesa1" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cartaMesa2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="cartaMesa3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="cartaAdversario3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cartaAdversario4" min="-2" max="-2" attributes="0"/>
@@ -143,50 +139,85 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="cartaAdversario9" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="cartaMesa0" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cartaMesa1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cartaMesa2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cartaMesa3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                                  <Component id="fazerJogada" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="234" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cartaAdversario8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario9" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario2" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaAdversario1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cartaMesa3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaMesa2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaMesa0" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaMesa1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cartaAdversario8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaAdversario1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="cartaMesa3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cartaMesa2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cartaMesa0" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cartaMesa1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                                  <Component id="fazerJogada" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                          <Component id="nomeAdversario" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="151" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cartaJogador8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador9" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador3" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador2" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador0" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="cartaJogador1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cartaJogador8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador0" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cartaJogador1" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="nomeJogador" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -195,169 +226,210 @@
         <Component class="javax.swing.JLabel" name="cartaAdversario0">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="4"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="6"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="7"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="8"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaAdversario9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="9"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador0">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="3"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="4"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="6"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="7"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="8"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaJogador9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="9"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaMesa0">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaMesa1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaMesa3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="cartaMesa2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ufsc/inf/View/imgs/10A.png"/>
+              <Image iconType="3" name="/br/ufsc/inf/View/imgs/carta-branca.png"/>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nomeAdversario">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Jogador2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="nomeJogador">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Jogador1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="fazerJogada">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fazer jogada"/>
           </Properties>
         </Component>
       </SubComponents>
