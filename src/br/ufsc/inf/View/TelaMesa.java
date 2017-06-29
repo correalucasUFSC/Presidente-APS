@@ -622,4 +622,13 @@ public class TelaMesa extends javax.swing.JFrame {
             this.tipoAdversario.setText("PRESIDENTE");
         }
     }
+    
+    public void aumentaVitoria(String jogador, int quantidade) {  
+        String texto = quantidade == 1 ? " vitória" : " vitórias";      
+        if(jogador.equals("jogador")) {
+            this.vitoriaJogador.setText(quantidade + texto);
+        } else {
+            this.vitoriaAdversario.setText(quantidade + texto);
+        }
+    }
 }
