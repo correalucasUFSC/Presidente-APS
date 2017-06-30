@@ -110,9 +110,13 @@ public class Controlador {
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
             ArrayList<Carta> baralho = this.criaBaralho();
             baralho = this.embaralha(baralho);
+            System.out.println("PASSOU 1");
             ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
+            System.out.println("PASSOU 2");
             ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
+            System.out.println("PASSOU 3");
             this.jogador.setMao(maoJogador1);
+            System.out.println("PASSOU 4");
             this.adversario.setMao(maoJogador2);
             this.mesa.setJogador(this.jogador);
             this.mesa.setAdversario(this.adversario);
@@ -171,10 +175,17 @@ public class Controlador {
      * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a mão do jogador).
      */
     private ArrayList<Carta> distribuiMao(int ordem, ArrayList<Carta> baralho) {
+        ArrayList<Carta> baralhoTemp = new ArrayList<Carta>();
         if (ordem == 1) {
-            return (ArrayList<Carta>) baralho.subList(0, 9);
+            for(int i = 0; i < 9; i++){
+                baralhoTemp.add(baralho.get(i));
+            }
+            return baralhoTemp;
         } else {
-            return (ArrayList<Carta>) baralho.subList(20, 29);
+            for(int i = 10; i < 19; i++){
+                baralhoTemp.add(baralho.get(i));
+            }
+            return baralhoTemp;
         }
     }
 
