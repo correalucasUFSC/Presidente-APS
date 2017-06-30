@@ -53,7 +53,8 @@ public class AtorNetGames implements OuvidorProxy {
             this.proxy.desconectar();
         } catch (NaoConectadoException ex) {
             return false;
-        }        
+        }  
+        System.out.println("chegou aqui");
         return true;
     }
 

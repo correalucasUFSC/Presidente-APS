@@ -67,6 +67,7 @@ public class Controlador {
         if (this.conectado) {
             boolean desconectado = this.atorNetGames.desconectar();
             if (desconectado) {
+                this.conectado = false;
                 return Constantes.DESCONEXAO_EXITO;
             } else {
                 return Constantes.DESCONEXAO_FALHOU;
@@ -143,7 +144,7 @@ public class Controlador {
     }
 
     /** Método para criar baralho
-     * @return List<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
+     * @return ArrayList<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
      */
     private ArrayList<Carta> criaBaralho() {
         ArrayList<Carta> baralho = new ArrayList<>();

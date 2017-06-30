@@ -78,7 +78,9 @@ public class AtorJogador {
                 for(Carta carta : mao){
                     if(carta.isSelecionada()){
                         selecionadas.add(carta);
-                        if()
+                        if(){
+                            
+                        }
                     }
                 }
             }
