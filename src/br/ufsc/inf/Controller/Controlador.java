@@ -135,7 +135,6 @@ public class Controlador {
                 System.out.println("SOU JOGADOR: " + this.jogador.getNome());
             }
         } else {
-            System.out.println("ORDEM = 0");
             this.mesa = mesa;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
