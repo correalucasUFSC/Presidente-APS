@@ -74,8 +74,7 @@ public class AtorJogador {
         
     }
     
-    public void tratarJogada
-    
+            /*
     public void tratarJogada(){
         List<Carta> selecionadas = new ArrayList<>();
         if(this.owner.isDaVez()){            
@@ -103,6 +102,7 @@ public class AtorJogador {
             //Não é a sua vez!
         }
     }
+*/
     
     public void jogadorSelecionouPosicao(int posicao){
        if(this.owner.getOrdem() == 1){
@@ -129,6 +129,14 @@ public class AtorJogador {
             ArrayList<Carta> cartasAdversario = mesa.getAdversario().getMao();
             ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
             this.telaMesa.atualizaTelaAdversario(cartasJogador, cartasAdversario, cartasMesa);
+        }
+    }
+    
+    public void atualizaNomeJogador(String jogador, String nome){
+        if(jogador.toLowerCase().equals("jogador")){
+            this.telaMesa.trocaNomeJogador(nome);
+        } else {
+            this.telaMesa.trocaNomeAdversario(nome);
         }
     }
 }
