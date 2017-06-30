@@ -129,7 +129,6 @@ public class Controlador {
             this.adversario = mesa.getAdversario();
             this.jogador = mesa.getJogador();
             this.atorJogador.atualizaTelaPosJogada(mesa);
-            this.atorJogador.atualizaNomeJogador("adversario", "ALGUEM");
             if(this.ordem == 2) {
                 System.out.println("SOU JOGADOR: " + this.adversario.getNome());
             } else {

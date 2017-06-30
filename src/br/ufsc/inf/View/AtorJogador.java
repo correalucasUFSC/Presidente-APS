@@ -120,14 +120,14 @@ public class AtorJogador {
     
     public void atualizaTelaPosJogada(Mesa mesa){
         if(this.owner.getOrdem() == 1) {
-            List<Carta> cartasJogador = mesa.getJogador().getMao();
+            ArrayList<Carta> cartasJogador = mesa.getJogador().getMao();
             int cartasAdversario = mesa.getAdversario().getMao().size();
-            List<Carta> cartasMesa = mesa.getCartasMesa();
+            ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
             this.telaMesa.atualizaTelaJogador(cartasJogador, cartasAdversario, cartasMesa);
         } else {
             int cartasJogador = mesa.getJogador().getMao().size();
-            List<Carta> cartasAdversario = mesa.getAdversario().getMao();
-            List<Carta> cartasMesa = mesa.getCartasMesa();
+            ArrayList<Carta> cartasAdversario = mesa.getAdversario().getMao();
+            ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
             this.telaMesa.atualizaTelaAdversario(cartasJogador, cartasAdversario, cartasMesa);
         }
     }
