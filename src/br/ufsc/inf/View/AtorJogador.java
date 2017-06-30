@@ -70,6 +70,12 @@ public class AtorJogador {
            }
     }
     
+    public void tratarJogadaJogador(){
+        
+    }
+    
+    public void tratarJogada
+    
     public void tratarJogada(){
         List<Carta> selecionadas = new ArrayList<>();
         if(this.owner.isDaVez()){            
