@@ -266,4 +266,8 @@ public class Controlador {
     public int getVitorias() {
         return this.vitorias;
     }
+
+    public void setDaVez(boolean b) {
+        this.daVez = false;
+    }
 }

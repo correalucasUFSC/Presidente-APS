@@ -70,8 +70,8 @@ public class AtorJogador {
         }
     }
 
-    public void tratarJogada(ArrayList<Carta> mao) {
-        int retorno;
+    public boolean tratarJogada(ArrayList<Carta> mao) {
+        int retorno = 12;
         boolean continua = false;
         List<Carta> selecionadas = new ArrayList<>();
         for (Carta carta : mao) {
@@ -85,6 +85,8 @@ public class AtorJogador {
             }
             else{
                 //retorna jogada inválida
+                this.telaMesa.informarResultado(retorno);
+                return false;
             }
         }
         if (this.owner.getMesa().getCartasMesa().isEmpty() || continua){
@@ -92,6 +94,8 @@ public class AtorJogador {
                 for (Carta carta : selecionadas) {
                     if (carta.getValor() != valorConjunto) {
                         //erro conjunto precisa ter cartas com mesmo valor
+                        this.telaMesa.informarResultado(retorno);
+                        return false;
                     }
                 }
                 int valorConjuntoMesa = this.owner.getMesa().getCartasMesa().isEmpty() ?
@@ -99,20 +103,31 @@ public class AtorJogador {
                 if(valorConjunto > valorConjuntoMesa){
                     //jogada valida           
                     mao.removeAll(selecionadas);
+                    return true;
                 }
                 else{
                     //jogada invalida
+                    this.telaMesa.informarResultado(retorno);
+                    return false;
                 }
         }
+        System.out.println("verificar o q houve");
+        return false;
     }
 
     public void solicitacaoTratarJogada() {
+        boolean jogadaValida;
         if (this.owner.getOrdem() == 1) {
-            this.tratarJogada(this.owner.getMesa().getJogador().getMao());
+            jogadaValida = this.tratarJogada(this.owner.getMesa().getJogador().getMao());
         } else {
-            this.tratarJogada(this.owner.getMesa().getAdversario().getMao());
+            jogadaValida = this.tratarJogada(this.owner.getMesa().getAdversario().getMao());
         }
-        this.verificaEstadoPartida();
+        if(jogadaValida){
+            this.owner.setDaVez(false);
+            this.atualizaTelaPosJogada(this.owner.getMesa());
+            this.verificaEstadoPartida();
+            this.owner.enviarJogada(); 
+        }
     }
 
     public void cartaSelecionadaPos(int posicao) {
@@ -168,14 +183,14 @@ public class AtorJogador {
             player = this.owner.getMesa().getAdversario();
             maoAVerificar = player.getMao();
         }
-        if(maoAVerificar.isEmpty()){/*
+        if(maoAVerificar.isEmpty()){
             this.owner.addVitoria();
             if(this.owner.getVitorias() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
             }
             else{
                 this.owner.getMesa().setVencedor(player);
-            }*/
+            }
         }
     }
 }
