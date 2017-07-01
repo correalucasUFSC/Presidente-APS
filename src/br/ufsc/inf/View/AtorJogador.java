@@ -168,7 +168,7 @@ public class AtorJogador {
         }
         if(maoAVerificar.isEmpty()){
             this.owner.addVitoria();
-            if(this.owner.getVitorias < 3){
+            if(this.owner.getVitorias() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
             }
             else{

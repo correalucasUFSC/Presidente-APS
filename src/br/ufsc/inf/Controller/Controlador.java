@@ -258,4 +258,12 @@ public class Controlador {
             this.mesa.setVencedor(vencedor);
         }
     }
+
+    public void addVitoria() {
+        this.vitorias++;
+    }
+
+    public int getVitorias() {
+        return this.vitorias;
+    }
 }

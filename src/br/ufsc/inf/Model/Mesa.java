@@ -68,6 +68,10 @@ public class Mesa implements Jogada {
     public void setVencedor(Jogador vencedor) {
         this.vencedor = vencedor;
     }
+
+    public void setVencedorUltimaRodada(Jogador player) {
+        this.vendedorUltimaRodada = player;
+    }
     
     
 }
