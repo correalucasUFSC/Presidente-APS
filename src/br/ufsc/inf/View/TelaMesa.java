@@ -539,6 +539,7 @@ public class TelaMesa extends javax.swing.JFrame {
         escondeCartas("adversario", cartasAdversario);
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("jogador", cartasJogador);
+        adicionaEventosNasCartas("jogador", cartasJogador.size());
     }
 
     /**
@@ -548,10 +549,10 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasMesa Lista de cartas da mesa.
      */
     public void atualizaTelaAdversario(int cartasJogador, ArrayList<Carta> cartasAdversario, ArrayList<Carta> cartasMesa) {
-        
         escondeCartas("jogador", cartasJogador);
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("adversario", cartasAdversario); 
+        adicionaEventosNasCartas("adversario", cartasAdversario.size());
     }
     
     /**
@@ -632,91 +633,71 @@ public class TelaMesa extends javax.swing.JFrame {
     private void adicionaEventosNasCartas(String jogador, int qntCartas){
         if(jogador.equals("jogador")) {
             switch (qntCartas) {
-                case 1:
-                    AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaJogador0);
-                    cartaJogador0.addMouseListener(acaoPersonalizada0);
-                    break;
-                case 2:
-                    AcaoPersonalizada acaoPersonalizada1 = new AcaoPersonalizada(cartaJogador1);
-                    cartaJogador1.addMouseListener(acaoPersonalizada1);
-                    break;
-                case 3:
-                    AcaoPersonalizada acaoPersonalizada2 = new AcaoPersonalizada(cartaJogador2);
-                    cartaJogador2.addMouseListener(acaoPersonalizada2);
-                    break;
-                case 4:
-                    AcaoPersonalizada acaoPersonalizada3 = new AcaoPersonalizada(cartaJogador3);
-                    cartaJogador3.addMouseListener(acaoPersonalizada3);
-                    break;
-                case 5:
-                    AcaoPersonalizada acaoPersonalizada4 = new AcaoPersonalizada(cartaJogador4);
-                    cartaJogador4.addMouseListener(acaoPersonalizada4);
-                    break;
-                case 6:
-                    AcaoPersonalizada acaoPersonalizada5 = new AcaoPersonalizada(cartaJogador5);
-                    cartaJogador5.addMouseListener(acaoPersonalizada5);
-                    break;
-                case 7:
-                    AcaoPersonalizada acaoPersonalizada6 = new AcaoPersonalizada(cartaJogador6);
-                    cartaJogador6.addMouseListener(acaoPersonalizada6);
-                    break;
-                case 8:
-                    AcaoPersonalizada acaoPersonalizada7 = new AcaoPersonalizada(cartaJogador7);
-                    cartaJogador7.addMouseListener(acaoPersonalizada7);
-                    break;
-                case 9:
-                    AcaoPersonalizada acaoPersonalizada8 = new AcaoPersonalizada(cartaJogador8);
-                    cartaJogador8.addMouseListener(acaoPersonalizada8);
-                    break;
                 case 10:
                     AcaoPersonalizada acaoPersonalizada9 = new AcaoPersonalizada(cartaJogador9);
                     cartaJogador9.addMouseListener(acaoPersonalizada9);
-                    break;
+                case 9:
+                    AcaoPersonalizada acaoPersonalizada8 = new AcaoPersonalizada(cartaJogador8);
+                    cartaJogador8.addMouseListener(acaoPersonalizada8);
+                case 8:
+                    AcaoPersonalizada acaoPersonalizada7 = new AcaoPersonalizada(cartaJogador7);
+                    cartaJogador7.addMouseListener(acaoPersonalizada7);
+                case 7:
+                    AcaoPersonalizada acaoPersonalizada6 = new AcaoPersonalizada(cartaJogador6);
+                    cartaJogador6.addMouseListener(acaoPersonalizada6);
+                case 6:
+                    AcaoPersonalizada acaoPersonalizada5 = new AcaoPersonalizada(cartaJogador5);
+                    cartaJogador5.addMouseListener(acaoPersonalizada5);
+                case 5:
+                    AcaoPersonalizada acaoPersonalizada4 = new AcaoPersonalizada(cartaJogador4);
+                    cartaJogador4.addMouseListener(acaoPersonalizada4);
+                case 4:
+                    AcaoPersonalizada acaoPersonalizada3 = new AcaoPersonalizada(cartaJogador3);
+                    cartaJogador3.addMouseListener(acaoPersonalizada3);
+                case 3:
+                    AcaoPersonalizada acaoPersonalizada2 = new AcaoPersonalizada(cartaJogador2);
+                    cartaJogador2.addMouseListener(acaoPersonalizada2);
+                case 2:
+                    AcaoPersonalizada acaoPersonalizada1 = new AcaoPersonalizada(cartaJogador1);
+                    cartaJogador1.addMouseListener(acaoPersonalizada1);
+                case 1:
+                    AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaJogador0);
+                    cartaJogador0.addMouseListener(acaoPersonalizada0);
                 default:
                     break;
             }
         } else {
             switch (qntCartas) {
-                case 1:
-                    AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaAdversario0);
-                    cartaAdversario0.addMouseListener(acaoPersonalizada0);
-                    break;
-                case 2:
-                    AcaoPersonalizada acaoPersonalizada1 = new AcaoPersonalizada(cartaAdversario1);
-                    cartaAdversario1.addMouseListener(acaoPersonalizada1);
-                    break;
-                case 3:
-                    AcaoPersonalizada acaoPersonalizada2 = new AcaoPersonalizada(cartaAdversario2);
-                    cartaAdversario2.addMouseListener(acaoPersonalizada2);
-                    break;
-                case 4:
-                    AcaoPersonalizada acaoPersonalizada3 = new AcaoPersonalizada(cartaAdversario3);
-                    cartaAdversario3.addMouseListener(acaoPersonalizada3);
-                    break;
-                case 5:
-                    AcaoPersonalizada acaoPersonalizada4 = new AcaoPersonalizada(cartaAdversario4);
-                    cartaAdversario4.addMouseListener(acaoPersonalizada4);
-                    break;
-                case 6:
-                    AcaoPersonalizada acaoPersonalizada5 = new AcaoPersonalizada(cartaAdversario5);
-                    cartaAdversario5.addMouseListener(acaoPersonalizada5);
-                    break;
-                case 7:
-                    AcaoPersonalizada acaoPersonalizada6 = new AcaoPersonalizada(cartaAdversario6);
-                    cartaAdversario6.addMouseListener(acaoPersonalizada6);
-                    break;
-                case 8:
-                    AcaoPersonalizada acaoPersonalizada7 = new AcaoPersonalizada(cartaAdversario7);
-                    cartaAdversario7.addMouseListener(acaoPersonalizada7);
-                    break;
-                case 9:
-                    AcaoPersonalizada acaoPersonalizada8 = new AcaoPersonalizada(cartaAdversario8);
-                    cartaAdversario8.addMouseListener(acaoPersonalizada8);
-                    break;
                 case 10:
                     AcaoPersonalizada acaoPersonalizada9 = new AcaoPersonalizada(cartaAdversario9);
                     cartaJogador9.addMouseListener(acaoPersonalizada9);
-                    break;
+                case 9:
+                    AcaoPersonalizada acaoPersonalizada8 = new AcaoPersonalizada(cartaAdversario8);
+                    cartaAdversario8.addMouseListener(acaoPersonalizada8);
+                case 8:
+                    AcaoPersonalizada acaoPersonalizada7 = new AcaoPersonalizada(cartaAdversario7);
+                    cartaAdversario7.addMouseListener(acaoPersonalizada7);
+                case 7:
+                    AcaoPersonalizada acaoPersonalizada6 = new AcaoPersonalizada(cartaAdversario6);
+                    cartaAdversario6.addMouseListener(acaoPersonalizada6);
+                case 6:
+                    AcaoPersonalizada acaoPersonalizada5 = new AcaoPersonalizada(cartaAdversario5);
+                    cartaAdversario5.addMouseListener(acaoPersonalizada5);
+                case 5:
+                    AcaoPersonalizada acaoPersonalizada4 = new AcaoPersonalizada(cartaAdversario4);
+                    cartaAdversario4.addMouseListener(acaoPersonalizada4);
+                case 4:
+                    AcaoPersonalizada acaoPersonalizada3 = new AcaoPersonalizada(cartaAdversario3);
+                    cartaAdversario3.addMouseListener(acaoPersonalizada3);
+                case 3:
+                    AcaoPersonalizada acaoPersonalizada2 = new AcaoPersonalizada(cartaAdversario2);
+                    cartaAdversario2.addMouseListener(acaoPersonalizada2);
+                case 2:
+                    AcaoPersonalizada acaoPersonalizada1 = new AcaoPersonalizada(cartaAdversario1);
+                    cartaAdversario1.addMouseListener(acaoPersonalizada1);
+                case 1:
+                    AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaAdversario0);
+                    cartaAdversario0.addMouseListener(acaoPersonalizada0);
                 default:
                     break;
             }
