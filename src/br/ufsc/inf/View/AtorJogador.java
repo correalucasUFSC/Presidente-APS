@@ -156,4 +156,12 @@ public class AtorJogador {
             this.telaMesa.trocaNomeAdversario(nome);
         }
     }
+    
+    public void bloqueiaTelaJogador(int ordem){
+        if(ordem == 1){
+            this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+        } else {
+            this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+        }
+    }
 }
