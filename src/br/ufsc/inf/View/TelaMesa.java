@@ -967,7 +967,17 @@ public class TelaMesa extends javax.swing.JFrame {
     }
     
     /**
-     * Método para limpar as cartas da mesa e dos jogadores.
+     * Método para limpar as cartas da mesa (As que já foram jogadas).
+     */
+    public void limpaCartasDaMesa(){
+        cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));        
+    }
+    
+    /**
+     * Método para limpar todas as cartas da mesa e dos jogadores.
      */
     public void limpaMesa(){
         cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
