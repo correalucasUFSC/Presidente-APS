@@ -36,5 +36,9 @@ public class Carta implements Jogada{
     public void seleciona() {
         this.selecionada = true;
     }
+
+    public int getValor() {
+        return this.valor;
+    }
     
 }

@@ -215,4 +215,8 @@ public class Controlador {
     public Mesa getMesa() {
         return this.mesa;
     }
+
+    public void enviarJogada() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

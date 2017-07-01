@@ -70,39 +70,57 @@ public class AtorJogador {
            }
     }
     
-    public void tratarJogadaJogador(){
-        
+    public int tratarJogada(ArrayList<Carta> mao){
+        int retorno;
+        List<Carta> selecionadas = new ArrayList<>();
+        for(Carta carta : mao){
+            if(carta.isSelecionada()){
+                selecionadas.add(carta);
+            }
+        }
+        if(selecionadas.isEmpty()){
+            //erro nenhuma jogada selecionada
+        }
+        else{
+           if(this.owner.getMesa().getCartasMesa().size() == selecionadas.size()){
+               int valorConjunto = selecionadas.get(0).getValor();
+               for(Carta carta : selecionadas){
+                   if(carta.getValor() != valorConjunto){
+                       //erro conjunto precisa ter cartas com mesmo valor
+                       return 0;
+                   }
+               }               
+               int valorConjuntoMesa = this.owner.getMesa().getCartasMesa().get(0).getValor();
+               if(valorConjunto <= valorConjuntoMesa){
+                   //erro valor conjunto precisa ser maior que valor conjunto mesa
+               }
+               else{
+                   //jogada valida
+                   this.owner.enviarJogada();
+               }
+           } 
+           else{
+               //erro conjunto de cartas selecionadas precisa ter a mesma quantidade
+               //de cartas da mesa
+           }
+        }
     }
     
-            /*
-    public void tratarJogada(){
-        List<Carta> selecionadas = new ArrayList<>();
+    public void solicitacaoTratarJogada(){
+        int retorno;
         if(this.owner.isDaVez()){            
             if(this.owner.getOrdem() == 1){
-                List<Carta> mao = this.owner.getMesa().getJogador().getMao();
-                for(Carta carta : mao){
-                    if(carta.isSelecionada()){
-                        selecionadas.add(carta);
-                        if(){
-                            
-                        }
-                    }
-                }
+                this.tratarJogada(this.owner.getMesa().getJogador().getMao());                
             }
             else{
-                List<Carta> mao = this.owner.getMesa().getAdversario().getMao();
-                for(Carta carta : mao){
-                    if(carta.isSelecionada()){
-                        selecionadas.add(carta);
-                    }
-                }
+                this.tratarJogada(this.owner.getMesa().getAdversario().getMao());
             }
         }
         else{
             //Não é a sua vez!
+            //retorno recebe mensagem de erro e exibe na interface
         }
     }
-*/
     
     public void jogadorSelecionouPosicao(int posicao){
        if(this.owner.getOrdem() == 1){
