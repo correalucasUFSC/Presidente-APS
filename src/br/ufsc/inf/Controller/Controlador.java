@@ -32,6 +32,7 @@ public class Controlador {
     protected boolean jogoEmAndamento;
     protected boolean daVez = false;
     protected boolean primeiraJogada = true;
+    protected int vitorias = 0;
 
     public Controlador() {
         this.mesa = new Mesa();
@@ -130,8 +131,12 @@ public class Controlador {
     public void receberJogada(Mesa mesa){
         if(!primeiraJogada){
             this.mesa = mesa;
+            this.adversario = this.mesa.getAdversario();
+            this.jogador = this.mesa.getJogador();
+            this.daVez = true;
             this.atorJogador.atualizaTelaPosJogada(mesa);
         } else {
+            this.primeiraJogada = false;
             this.mesa = mesa;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
@@ -216,6 +221,17 @@ public class Controlador {
     }
 
     public void enviarJogada() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.daVez = false;
+        this.atorNetGames.enviarJogada(this.mesa);
+    }
+
+    public void verificaSeJogadorVenceu(ArrayList<Carta> mao) {
+        if(mao.isEmpty()){
+            this.vitorias++;
+        }
+        if(this.vitorias == 3){
+            Jogador vencedor = this.ordem == 1 ? this.jogador : this.adversario;
+            this.mesa.setVencedor(vencedor);
+        }
     }
 }

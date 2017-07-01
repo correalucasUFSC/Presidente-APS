@@ -64,6 +64,10 @@ public class Mesa implements Jogada {
     public ArrayList<Carta> getCartasMesa() {
         return cartasDaMesa;
     }
+
+    public void setVencedor(Jogador vencedor) {
+        this.vencedor = vencedor;
+    }
     
     
 }

@@ -95,7 +95,10 @@ public class AtorJogador {
                    //erro valor conjunto precisa ser maior que valor conjunto mesa
                }
                else{
-                   //jogada valida                   
+                   //jogada valida           
+                   //TODO REMOVER CARTAS SELECIONADAS DA MAO
+                   mao.removeAll(selecionadas);
+                   this.owner.verificaSeJogadorVenceu(mao);
                    this.owner.enviarJogada();
                }
            } 
