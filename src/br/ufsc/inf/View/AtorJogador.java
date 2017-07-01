@@ -147,11 +147,13 @@ public class AtorJogador {
         }
     }
 
-    public void bloqueiaTelaJogador(int ordem) {
-        if (ordem == 1) {
+    public void bloqueiaTelaJogador(int ordem){
+        if(ordem == 1){
             this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+            this.telaMesa.trocaVez("adversario");
         } else {
             this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+            this.telaMesa.trocaVez("jogador");
         }
     }
 
