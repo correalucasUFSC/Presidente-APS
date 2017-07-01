@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author lucas
+ * @author Lucas Correa, Thiago Pauli
  */
 public class TelaMesa extends javax.swing.JFrame {
 
@@ -26,7 +26,7 @@ public class TelaMesa extends javax.swing.JFrame {
     protected static int MAX_CARTAS_SELECIONADAS = 4;
     
     /**
-     * Creates new form TElaMesa
+     * Creates new form TelaMesa
      */
     public TelaMesa(AtorJogador atorJogador) {
         initComponents();
@@ -655,6 +655,11 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }    
     
+    /**
+     * Método para remover as cartas após a jogada.
+     * @param jogador Usar "jogador" ou "adversario".
+     * @param posicoes Array de posições das cartas a serem removidas. 
+     */
     public void removeCartasPosJogada(String jogador, int[] posicoes) {
         int tamanho = posicoes.length;
         if(jogador.toLowerCase().equals("adversario")){
@@ -686,6 +691,10 @@ public class TelaMesa extends javax.swing.JFrame {
         }        
     }    
     
+    /**
+     * Método COSMÉTICO para trocar a vez do jogador, altera a seta verde da direita.
+     * @param jogador Selecionar o jogador da vez. Usar "jogador" ou "adversario".
+     */
     public void trocaVez(String jogador) {
         if(jogador.toLowerCase().equals("jogador")){
             this.vezAdversario.setText("");
@@ -696,6 +705,11 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }    
     
+    /**
+     * Método para bloquear a mesa de quem não está jogando.
+     * @param jogador Usar "jogador" ou "adversario".
+     * @param qntCartas Quantidade de cartas que o jogador tem na mão.
+     */
     public void bloqueiaMesa(String jogador, int qntCartas){
         if(jogador.equals("jogador")) {
             switch (qntCartas) {
@@ -790,6 +804,11 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
+    /**
+     * Método para adicionar os eventos de clique nas cartas.
+     * @param jogador Usar "jogador" ou "adversario".
+     * @param qntCartas Numero de cartas na mão do jogador.
+     */
     private void adicionaEventosNasCartas(String jogador, int qntCartas){
         if(jogador.equals("jogador")) {
             switch (qntCartas) {
@@ -927,7 +946,7 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param jogador Passe "jogador" ou "adversario".
      * @param quantidade Quantidade de vitórias atual.
      */
-    public void aumentaVitoria(String jogador, int quantidade) {  
+    public void aumentaVitoria(String jogador, int quantidade) {
         String texto = quantidade == 1 ? " vitória" : " vitórias";      
         if(jogador.equals("jogador")) {
             this.vitoriaJogador.setText(quantidade + texto);
@@ -936,7 +955,9 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
-    
+    /**
+     * Método para realizar a jogada (Após clicar no botão realizar jogada).
+     */
     public void realizarJogada(){
         if(cartasSelecionadas > 0){
             this.atorJogador.solicitacaoTratarJogada();
@@ -945,7 +966,9 @@ public class TelaMesa extends javax.swing.JFrame {
         }
     }
     
-    
+    /**
+     * Método para limpar as cartas da mesa e dos jogadores.
+     */
     public void limpaMesa(){
         cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
@@ -976,7 +999,9 @@ public class TelaMesa extends javax.swing.JFrame {
     
     
     
-    
+    /**
+     * Listener personalizado para as cartas.
+     */
     private class AcaoPersonalizada implements MouseListener {
         private javax.swing.JLabel carta;
 
