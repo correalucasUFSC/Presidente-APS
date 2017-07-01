@@ -147,11 +147,13 @@ public class AtorJogador {
         }
     }
 
-    public void bloqueiaTelaJogador(int ordem) {
-        if (ordem == 1) {
+    public void bloqueiaTelaJogador(int ordem){
+        if(ordem == 1){
             this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+            this.telaMesa.trocaVez("adversario");
         } else {
             this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+            this.telaMesa.trocaVez("jogador");
         }
     }
 
@@ -166,14 +168,14 @@ public class AtorJogador {
             player = this.owner.getMesa().getAdversario();
             maoAVerificar = player.getMao();
         }
-        if(maoAVerificar.isEmpty()){
+        if(maoAVerificar.isEmpty()){/*
             this.owner.addVitoria();
             if(this.owner.getVitorias() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
             }
             else{
                 this.owner.getMesa().setVencedor(player);
-            }
+            }*/
         }
     }
 }
