@@ -95,7 +95,7 @@ public class AtorJogador {
                    //erro valor conjunto precisa ser maior que valor conjunto mesa
                }
                else{
-                   //jogada valida
+                   //jogada valida                   
                    this.owner.enviarJogada();
                }
            } 
@@ -104,6 +104,7 @@ public class AtorJogador {
                //de cartas da mesa
            }
         }
+        return 0;
     }
     
     public void solicitacaoTratarJogada(){
