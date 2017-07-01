@@ -22,6 +22,8 @@ public class TelaMesa extends javax.swing.JFrame {
 
     protected AtorJogador atorJogador;
     protected static String EXTENSAO_CARTA = ".png";
+    protected int cartasSelecionadas = 0;
+    protected static int MAX_CARTAS_SELECIONADAS = 4;
     
     /**
      * Creates new form TElaMesa
@@ -230,6 +232,7 @@ public class TelaMesa extends javax.swing.JFrame {
         tipoJogador.setText("PRESIDENTE");
 
         fazerJogada.setText("Fazer jogada");
+        fazerJogada.setEnabled(false);
 
         vitoriaAdversario.setForeground(new java.awt.Color(0, 204, 0));
         vitoriaAdversario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -508,7 +511,7 @@ public class TelaMesa extends javax.swing.JFrame {
     public String obterNomeServidor() {
         String enderecoServidor = Constantes.ENDERECO_SERVIDOR;
         enderecoServidor = JOptionPane.showInputDialog(this, 
-                Constantes.INSIRA_ENDERECO_SERVIDOR, enderecoServidor);
+        Constantes.INSIRA_ENDERECO_SERVIDOR, enderecoServidor);
         return enderecoServidor;
     }
 
@@ -551,7 +554,7 @@ public class TelaMesa extends javax.swing.JFrame {
     public void atualizaTelaAdversario(int cartasJogador, ArrayList<Carta> cartasAdversario, ArrayList<Carta> cartasMesa) {
         escondeCartas("jogador", cartasJogador);
         colocaCartasDaMesa(cartasMesa);
-        colocaCartasDaMao("adversario", cartasAdversario); 
+        colocaCartasDaMao("adversario", cartasAdversario);
         adicionaEventosNasCartas("adversario", cartasAdversario.size());
     }
     
@@ -670,7 +673,7 @@ public class TelaMesa extends javax.swing.JFrame {
             switch (qntCartas) {
                 case 10:
                     AcaoPersonalizada acaoPersonalizada9 = new AcaoPersonalizada(cartaAdversario9);
-                    cartaJogador9.addMouseListener(acaoPersonalizada9);
+                    cartaAdversario9.addMouseListener(acaoPersonalizada9);
                 case 9:
                     AcaoPersonalizada acaoPersonalizada8 = new AcaoPersonalizada(cartaAdversario8);
                     cartaAdversario8.addMouseListener(acaoPersonalizada8);
@@ -713,11 +716,21 @@ public class TelaMesa extends javax.swing.JFrame {
     private void cartaClicada(javax.swing.JLabel carta){
         String posicao = carta.getToolTipText();
         if(carta.getText().equals("X")){
-            //tiraSeleção
-            carta.setText("");            
+            //tiraSeleção FAZER IF
+            carta.setText("");
+            this.cartasSelecionadas--;
+            if(this.cartasSelecionadas == 0) {
+                fazerJogada.setEnabled(false);  
+            }
         } else {
-            //enviaPosiçãoSelecionada   
-            carta.setText("X");         
+            if(cartasSelecionadas < MAX_CARTAS_SELECIONADAS){
+                //enviaPosiçãoSelecionada FAZER IF
+                carta.setText("X");   
+                this.cartasSelecionadas++;
+                fazerJogada.setEnabled(true);                
+            } else {
+                //VOCÊ SELECIONOU O MÁXIMO DE CARTAS POSSIVEIS.
+            }
         }
     }
 
@@ -763,6 +776,43 @@ public class TelaMesa extends javax.swing.JFrame {
         } else {
             this.vitoriaAdversario.setText(quantidade + texto);
         }
+    }
+    
+    
+    public void realizarJogada(){
+        if(cartasSelecionadas > 0){
+            //REALIZA A JOGADA
+        } else {
+            //INFORMA ERRO
+        }
+    }
+    
+    
+    public void limpaMesa(){
+        cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
     }
     
     

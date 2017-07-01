@@ -608,6 +608,7 @@
         <Component class="javax.swing.JButton" name="fazerJogada">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fazer jogada"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="vitoriaAdversario">

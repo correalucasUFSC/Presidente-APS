@@ -160,7 +160,7 @@ public class Controlador {
     private ArrayList<Carta> criaBaralho() {
         ArrayList<Carta> baralho = new ArrayList<>();
         String[] naipes = {"A", "B", "C", "D"};
-        for (int valor = 14; valor > 0; valor--) {
+        for (int valor = 13; valor > 0; valor--) {
             for (int naipe = 0; naipe < 4; naipe++) {
                 baralho.add(new Carta(valor, naipes[naipe]));
             }
@@ -184,12 +184,12 @@ public class Controlador {
     private ArrayList<Carta> distribuiMao(int ordem, ArrayList<Carta> baralho) {
         ArrayList<Carta> baralhoTemp = new ArrayList<Carta>();
         if (ordem == 1) {
-            for(int i = 0; i < 9; i++){
+            for(int i = 0; i <= 9; i++){
                 baralhoTemp.add(baralho.get(i));
             }
             return baralhoTemp;
         } else {
-            for(int i = 10; i < 19; i++){
+            for(int i = 10; i <= 19; i++){
                 baralhoTemp.add(baralho.get(i));
             }
             return baralhoTemp;
