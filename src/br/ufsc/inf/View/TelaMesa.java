@@ -10,6 +10,7 @@ import br.ufsc.inf.Model.Carta;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -534,7 +535,7 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasAdversario Quantidade de cartas do Adversário.
      * @param cartasMesa Lista de cartas da mesa.
      */
-    public void atualizaTelaJogador(List<Carta> cartasJogador, int cartasAdversario, List<Carta> cartasMesa) {
+    public void atualizaTelaJogador(ArrayList<Carta> cartasJogador, int cartasAdversario, ArrayList<Carta> cartasMesa) {
         escondeCartas("adversario", cartasAdversario);
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("jogador", cartasJogador);
@@ -546,10 +547,11 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasAdversario Lista de cartas do Adversário.
      * @param cartasMesa Lista de cartas da mesa.
      */
-    public void atualizaTelaAdversario(int cartasJogador, List<Carta> cartasAdversario, List<Carta> cartasMesa) {
+    public void atualizaTelaAdversario(int cartasJogador, ArrayList<Carta> cartasAdversario, ArrayList<Carta> cartasMesa) {
+        
         escondeCartas("jogador", cartasJogador);
         colocaCartasDaMesa(cartasMesa);
-        colocaCartasDaMao("adversario", cartasAdversario);        
+        colocaCartasDaMao("adversario", cartasAdversario); 
     }
     
     /**
@@ -559,27 +561,27 @@ public class TelaMesa extends javax.swing.JFrame {
      */
     private void escondeCartas(String jogador, int tamanho){
         if(jogador.toLowerCase().equals("adversario")){
-            if(tamanho == 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
         } else if(jogador.toLowerCase().equals("jogador")){
-            if(tamanho == 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-            if(tamanho == 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));            
+            if(tamanho >= 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            if(tamanho >= 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));            
         }
     }
     
@@ -587,12 +589,12 @@ public class TelaMesa extends javax.swing.JFrame {
      * Método para colocar as cartas jogadas na mesa.
      * @param cartasMesa Lista das cartas da mesa.
      */
-    private void colocaCartasDaMesa(List<Carta> cartasMesa){
+    private void colocaCartasDaMesa(ArrayList<Carta> cartasMesa){
         int tamanho = cartasMesa.size();
-        if(tamanho == 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
-        if(tamanho == 2) cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
-        if(tamanho == 3) cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(2).getCaminho()))));
-        if(tamanho == 4) cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
+        if(tamanho >= 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
+        if(tamanho >= 2) cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
+        if(tamanho >= 3) cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(2).getCaminho()))));
+        if(tamanho >= 4) cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
     }
     
     /**
@@ -600,30 +602,30 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param jogador Utilize "jogador" ou "adversario".
      * @param cartasMao Lista de cartas.
      */
-    private void colocaCartasDaMao(String jogador, List<Carta> cartasMao){
+    private void colocaCartasDaMao(String jogador, ArrayList<Carta> cartasMao){
         int tamanho = cartasMao.size();
         if(jogador.toLowerCase().equals("adversario")){
-            if(tamanho == 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
-            if(tamanho == 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
-            if(tamanho == 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
-            if(tamanho == 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
-            if(tamanho == 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
-            if(tamanho == 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
-            if(tamanho == 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
-            if(tamanho == 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
-            if(tamanho == 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
-            if(tamanho == 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));
+            if(tamanho >= 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
+            if(tamanho >= 2) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
+            if(tamanho >= 3) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
+            if(tamanho >= 4) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
+            if(tamanho >= 5) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
+            if(tamanho >= 6) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
+            if(tamanho >= 7) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
+            if(tamanho >= 8) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
+            if(tamanho >= 9) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
+            if(tamanho >= 10) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));
         } else if(jogador.toLowerCase().equals("jogador")){
-            if(tamanho == 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
-            if(tamanho == 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
-            if(tamanho == 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
-            if(tamanho == 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
-            if(tamanho == 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
-            if(tamanho == 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
-            if(tamanho == 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
-            if(tamanho == 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
-            if(tamanho == 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
-            if(tamanho == 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));        
+            if(tamanho >= 1) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
+            if(tamanho >= 2) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(1).getCaminho()))));
+            if(tamanho >= 3) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(2).getCaminho()))));
+            if(tamanho >= 4) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(3).getCaminho()))));
+            if(tamanho >= 5) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(4).getCaminho()))));
+            if(tamanho >= 6) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(5).getCaminho()))));
+            if(tamanho >= 7) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(6).getCaminho()))));
+            if(tamanho >= 8) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(7).getCaminho()))));
+            if(tamanho >= 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
+            if(tamanho >= 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));        
         }
     }
     
