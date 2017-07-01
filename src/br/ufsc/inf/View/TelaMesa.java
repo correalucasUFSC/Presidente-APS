@@ -75,6 +75,8 @@ public class TelaMesa extends javax.swing.JFrame {
         fazerJogada = new javax.swing.JButton();
         vitoriaAdversario = new javax.swing.JLabel();
         vitoriaJogador = new javax.swing.JLabel();
+        vezJogador = new javax.swing.JLabel();
+        vezAdversario = new javax.swing.JLabel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuConectar = new javax.swing.JMenu();
         jMenuIniciarPartida = new javax.swing.JMenu();
@@ -141,7 +143,7 @@ public class TelaMesa extends javax.swing.JFrame {
 
         cartaAdversario9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario9.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario9.setToolTipText("9");
         cartaAdversario9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -201,7 +203,7 @@ public class TelaMesa extends javax.swing.JFrame {
 
         cartaJogador9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador9.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador9.setToolTipText("9");
         cartaJogador9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -242,6 +244,14 @@ public class TelaMesa extends javax.swing.JFrame {
         vitoriaJogador.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         vitoriaJogador.setText("0 vitórias");
 
+        vezJogador.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        vezJogador.setForeground(new java.awt.Color(51, 255, 0));
+        vezJogador.setText("<");
+
+        vezAdversario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        vezAdversario.setForeground(new java.awt.Color(51, 255, 0));
+        vezAdversario.setText("<");
+
         javax.swing.GroupLayout painelMesaLayout = new javax.swing.GroupLayout(painelMesa);
         painelMesa.setLayout(painelMesaLayout);
         painelMesaLayout.setHorizontalGroup(
@@ -276,7 +286,10 @@ public class TelaMesa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartaJogador8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cartaJogador9))
+                        .addComponent(cartaJogador9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(vezJogador)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(painelMesaLayout.createSequentialGroup()
                         .addComponent(cartaAdversario0)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,7 +311,10 @@ public class TelaMesa extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cartaAdversario8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cartaAdversario9))
+                                .addComponent(cartaAdversario9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(vezAdversario)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(painelMesaLayout.createSequentialGroup()
                                 .addComponent(cartaMesa0)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -316,18 +332,23 @@ public class TelaMesa extends javax.swing.JFrame {
             .addGroup(painelMesaLayout.createSequentialGroup()
                 .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelMesaLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
                         .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cartaAdversario8)
-                            .addComponent(cartaAdversario9)
-                            .addComponent(cartaAdversario7)
-                            .addComponent(cartaAdversario6)
-                            .addComponent(cartaAdversario5)
-                            .addComponent(cartaAdversario3)
-                            .addComponent(cartaAdversario4)
-                            .addComponent(cartaAdversario2)
-                            .addComponent(cartaAdversario0)
-                            .addComponent(cartaAdversario1))
+                            .addGroup(painelMesaLayout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cartaAdversario8)
+                                    .addComponent(cartaAdversario9)
+                                    .addComponent(cartaAdversario7)
+                                    .addComponent(cartaAdversario6)
+                                    .addComponent(cartaAdversario5)
+                                    .addComponent(cartaAdversario3)
+                                    .addComponent(cartaAdversario4)
+                                    .addComponent(cartaAdversario2)
+                                    .addComponent(cartaAdversario0)
+                                    .addComponent(cartaAdversario1)))
+                            .addGroup(painelMesaLayout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(vezAdversario)))
                         .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelMesaLayout.createSequentialGroup()
                                 .addGap(151, 151, 151)
@@ -367,7 +388,10 @@ public class TelaMesa extends javax.swing.JFrame {
                         .addComponent(nomeJogador)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vitoriaJogador)
-                        .addGap(57, 57, 57))))
+                        .addGap(57, 57, 57))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMesaLayout.createSequentialGroup()
+                        .addComponent(vezJogador)
+                        .addGap(64, 64, 64))))
         );
 
         jMenuConectar.setText("Conectar");
@@ -469,6 +493,8 @@ public class TelaMesa extends javax.swing.JFrame {
     private javax.swing.JPanel painelMesa;
     private javax.swing.JLabel tipoAdversario;
     private javax.swing.JLabel tipoJogador;
+    private javax.swing.JLabel vezAdversario;
+    private javax.swing.JLabel vezJogador;
     private javax.swing.JLabel vitoriaAdversario;
     private javax.swing.JLabel vitoriaJogador;
     // End of variables declaration//GEN-END:variables
@@ -517,10 +543,6 @@ public class TelaMesa extends javax.swing.JFrame {
 
     public String obterNomeJogador() {
         return JOptionPane.showInputDialog(Constantes.INSIRA_NOME_JOGADOR);
-    }
-
-    public void atualizarNomeAdversario(String nome) {
-        //TODO ATUALIZAR NOME ADVERSARIO
     }
     
     /**
@@ -631,6 +653,141 @@ public class TelaMesa extends javax.swing.JFrame {
             if(tamanho >= 9) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(8).getCaminho()))));
             if(tamanho >= 10) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(9).getCaminho()))));        
         }
+    }    
+    
+    public void removeCartasPosJogada(String jogador, int[] posicoes) {
+        int tamanho = posicoes.length;
+        if(jogador.toLowerCase().equals("adversario")){
+            for(int i = 0; i < tamanho; i++){                
+                if(i == 0) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 1) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 2) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 3) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 4) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 5) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 6) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 7) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 8) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 9) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            }
+        } else if(jogador.toLowerCase().equals("jogador")){
+            for(int i = 0; i < tamanho; i++){                
+                if(i == 0) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 1) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 2) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 3) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 4) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 5) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 6) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 7) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 8) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                if(i == 9) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+            }
+        }        
+    }    
+    
+    public void trocaVez(String jogador) {
+        if(jogador.toLowerCase().equals("jogador")){
+            this.vezAdversario.setText("");
+            this.vezJogador.setText("<");
+        } else {
+            this.vezAdversario.setText("<");
+            this.vezJogador.setText("");
+        }
+    }    
+    
+    public void bloqueiaMesa(String jogador, int qntCartas){
+        if(jogador.equals("jogador")) {
+            switch (qntCartas) {
+                case 10:
+                    for( MouseListener m : cartaJogador9.getMouseListeners() ) {
+                        cartaJogador9.removeMouseListener(m);
+                    }
+                case 9:
+                    for( MouseListener m : cartaJogador8.getMouseListeners() ) {
+                        cartaJogador8.removeMouseListener(m);
+                    }
+                case 8:
+                    for( MouseListener m : cartaJogador7.getMouseListeners() ) {
+                        cartaJogador7.removeMouseListener(m);
+                    }
+                case 7:
+                    for( MouseListener m : cartaJogador6.getMouseListeners() ) {
+                        cartaJogador6.removeMouseListener(m);
+                    }
+                case 6:
+                    for( MouseListener m : cartaJogador5.getMouseListeners() ) {
+                        cartaJogador5.removeMouseListener(m);
+                    }
+                case 5:
+                    for( MouseListener m : cartaJogador4.getMouseListeners() ) {
+                        cartaJogador4.removeMouseListener(m);
+                    }
+                case 4:
+                    for( MouseListener m : cartaJogador3.getMouseListeners() ) {
+                        cartaJogador3.removeMouseListener(m);
+                    }
+                case 3:
+                    for( MouseListener m : cartaJogador2.getMouseListeners() ) {
+                        cartaJogador2.removeMouseListener(m);
+                    }
+                case 2:
+                    for( MouseListener m : cartaJogador1.getMouseListeners() ) {
+                        cartaJogador1.removeMouseListener(m);
+                    }
+                case 1:
+                    for( MouseListener m : cartaJogador0.getMouseListeners() ) {
+                        cartaJogador0.removeMouseListener(m);
+                    }
+                default:
+                    break;
+            }
+        } else {
+            switch (qntCartas) {
+                case 10:
+                    for( MouseListener m : cartaAdversario9.getMouseListeners() ) {
+                        cartaAdversario9.removeMouseListener(m);
+                    }
+                case 9:
+                    for( MouseListener m : cartaAdversario8.getMouseListeners() ) {
+                        cartaAdversario8.removeMouseListener(m);
+                    }
+                case 8:
+                    for( MouseListener m : cartaAdversario7.getMouseListeners() ) {
+                        cartaAdversario7.removeMouseListener(m);
+                    }
+                case 7:
+                    for( MouseListener m : cartaAdversario6.getMouseListeners() ) {
+                        cartaAdversario6.removeMouseListener(m);
+                    }
+                case 6:
+                    for( MouseListener m : cartaAdversario5.getMouseListeners() ) {
+                        cartaAdversario5.removeMouseListener(m);
+                    }
+                case 5:
+                    for( MouseListener m : cartaAdversario4.getMouseListeners() ) {
+                        cartaAdversario4.removeMouseListener(m);
+                    }
+                case 4:
+                    for( MouseListener m : cartaAdversario3.getMouseListeners() ) {
+                        cartaAdversario3.removeMouseListener(m);
+                    }
+                case 3:
+                    for( MouseListener m : cartaAdversario2.getMouseListeners() ) {
+                        cartaAdversario2.removeMouseListener(m);
+                    }
+                case 2:
+                    for( MouseListener m : cartaAdversario1.getMouseListeners() ) {
+                        cartaAdversario1.removeMouseListener(m);
+                    }
+                case 1:
+                    for( MouseListener m : cartaAdversario0.getMouseListeners() ) {
+                        cartaAdversario0.removeMouseListener(m);
+                    }
+                default:
+                    break;
+            }
+        }
     }
     
     private void adicionaEventosNasCartas(String jogador, int qntCartas){
@@ -715,8 +872,9 @@ public class TelaMesa extends javax.swing.JFrame {
      */
     private void cartaClicada(javax.swing.JLabel carta){
         String posicao = carta.getToolTipText();
+        Integer pos = Integer.parseInt(posicao);
         if(carta.getText().equals("X")){
-            //tiraSeleção FAZER IF
+            this.atorJogador.cartaSelecionadaPos(pos);
             carta.setText("");
             this.cartasSelecionadas--;
             if(this.cartasSelecionadas == 0) {
@@ -724,7 +882,7 @@ public class TelaMesa extends javax.swing.JFrame {
             }
         } else {
             if(cartasSelecionadas < MAX_CARTAS_SELECIONADAS){
-                //enviaPosiçãoSelecionada FAZER IF
+                this.atorJogador.cartaSelecionadaPos(pos);
                 carta.setText("X");   
                 this.cartasSelecionadas++;
                 fazerJogada.setEnabled(true);                
@@ -781,7 +939,7 @@ public class TelaMesa extends javax.swing.JFrame {
     
     public void realizarJogada(){
         if(cartasSelecionadas > 0){
-            //REALIZA A JOGADA
+            this.atorJogador.solicitacaoTratarJogada();
         } else {
             //INFORMA ERRO
         }

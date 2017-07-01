@@ -57,17 +57,16 @@ public class AtorJogador {
     }
 
     public void informarNomeAdversario(String nome) {
-        this.telaMesa.atualizarNomeAdversario(nome);
+        this.telaMesa.trocaNomeAdversario(nome);
     }
     
     public void clickCarta(List<Carta> mao, int posicao){
         Carta cartaSelecionada = mao.get(posicao);  
         if(cartaSelecionada.isSelecionada()){
-               cartaSelecionada.tiraSelecao();
-           }
-           else{
-               cartaSelecionada.seleciona();
-           }
+            cartaSelecionada.tiraSelecao();
+        } else {
+            cartaSelecionada.seleciona();
+        }
     }
     
     public int tratarJogada(ArrayList<Carta> mao){
@@ -126,18 +125,14 @@ public class AtorJogador {
         }
     }
     
-    public void jogadorSelecionouPosicao(int posicao){
+    public void cartaSelecionadaPos(int posicao){
        if(this.owner.getOrdem() == 1){
-           List<Carta> mao = this.owner.getMesa().getJogador().getMao();
-           this.clickCarta(mao, posicao);
-       } 
-    }
-    
-    public void adversarioSelecionouPosicao(int posicao){
-        if(this.owner.getOrdem() == 2){
+            List<Carta> mao = this.owner.getMesa().getJogador().getMao();
+            this.clickCarta(mao, posicao);
+       } else if(this.owner.getOrdem() == 2){
             List<Carta> mao = this.owner.getMesa().getAdversario().getMao();
             this.clickCarta(mao, posicao);
-        }
+       }
     }
     
     public void atualizaTelaPosJogada(Mesa mesa){
