@@ -148,14 +148,17 @@ public class Controlador {
         }
     }
 
-    /** Método para limpar tudo */
+    /** 
+     * Método para limpar tudo
+     */
     private void limpar() {
         this.adversario = null;
         this.jogoEmAndamento = false;
         this.mesa = new Mesa();
     }
 
-    /** Método para criar baralho
+    /** 
+     * Método para criar baralho
      * @return ArrayList<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
      */
     private ArrayList<Carta> criaBaralho() {
@@ -169,7 +172,8 @@ public class Controlador {
         return baralho;
     }
 
-    /** Método para embaralhar o baralho.
+    /** 
+     * Método para embaralhar o baralho.
      * @return List<Carta> - Baralho completo embaralhado.
      */
     private ArrayList<Carta> embaralha(ArrayList<Carta> baralho) {
@@ -177,7 +181,8 @@ public class Controlador {
         return baralho;
     }
 
-    /** Método para distribuir a mão para jogador.
+    /** 
+     * Método para distribuir a mão para jogador.
      * @param ordem int - Ordem do jogador.
      * @param baralho List<Carta> - Baralho de cartas.
      * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a mão do jogador).
@@ -197,7 +202,8 @@ public class Controlador {
         }
     }
 
-    /** Método para descobrir se é o jogador da vez.
+    /** 
+     * Método para descobrir se é o jogador da vez.
      * @return boolean - Verifica se ordem é igual a 1.
      */
     public boolean isDaVez() {
@@ -205,7 +211,8 @@ public class Controlador {
     }
 
 
-    /** Método para setar a ordem dos jogadores.
+    /** 
+     * Método para setar a ordem dos jogadores.
      * @param ordem int - Ordem dos jogadores.
      */
     private void setOrdens(int ordem) {
@@ -213,19 +220,35 @@ public class Controlador {
         this.ordemAdversario = this.ordem == 1 ? 2 : 1;
     }
 
+    /**
+     * Método para retornar ordem
+     * @return ordem
+     */
     public int getOrdem() {
         return this.ordem;
     }
     
+    /**
+     * Método para retornar mesa
+     * @return mesa
+     */
     public Mesa getMesa() {
         return this.mesa;
     }
 
+    /**
+     * Método para enviar jogada, antes de enviar ele bloqueia a tela do jogador atual.
+     */
     public void enviarJogada() {
         this.daVez = false;
+        this.atorJogador.bloqueiaTelaJogador(this.ordem);
         this.atorNetGames.enviarJogada(this.mesa);
     }
 
+    /**
+     * Método para verificar vencedor.
+     * @param mao Mão do jogador.
+     */
     public void verificaSeJogadorVenceu(ArrayList<Carta> mao) {
         if(mao.isEmpty()){
             this.vitorias++;
