@@ -616,6 +616,7 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasMesa Lista das cartas da mesa.
      */
     private void colocaCartasDaMesa(ArrayList<Carta> cartasMesa){
+        limpaCartasDaMesa();
         int tamanho = cartasMesa.size();
         if(tamanho >= 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
         if(tamanho >= 2) cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
@@ -969,7 +970,7 @@ public class TelaMesa extends javax.swing.JFrame {
     /**
      * Método para limpar as cartas da mesa (As que já foram jogadas).
      */
-    public void limpaCartasDaMesa(){
+    private void limpaCartasDaMesa(){
         cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
