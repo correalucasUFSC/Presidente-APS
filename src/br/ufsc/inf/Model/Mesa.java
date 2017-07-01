@@ -20,7 +20,7 @@ public class Mesa implements Jogada {
     protected Jogador vendedorUltimaRodada;
     protected int rodadaAtual;
     protected Jogador daVez;
-    protected ArrayList<Carta> cartasDaMesa;  
+    protected ArrayList<Carta> cartasDaMesa = new ArrayList<Carta>();  
     
     public Mesa(){
         
