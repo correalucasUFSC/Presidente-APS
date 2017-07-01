@@ -31,6 +31,7 @@ public class Controlador {
     protected boolean conectado;
     protected boolean jogoEmAndamento;
     protected boolean daVez = false;
+    protected boolean primeiraJogada = true;
 
     public Controlador() {
         this.mesa = new Mesa();
@@ -117,6 +118,9 @@ public class Controlador {
             this.mesa.setJogador(this.jogador);
             this.mesa.setAdversario(this.adversario);
             this.atorNetGames.enviarJogada(this.mesa);
+            this.atorJogador.atualizaTelaPosJogada(this.mesa);
+            this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
+            this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
         }
     }
     
@@ -124,22 +128,17 @@ public class Controlador {
      * @param mesa Mesa - Recebe a mesa inteira do outro jogador.
      */
     public void receberJogada(Mesa mesa){
-        if(this.ordem != 0){
+        if(!primeiraJogada){
             this.mesa = mesa;
-            this.adversario = mesa.getAdversario();
-            this.jogador = mesa.getJogador();
             this.atorJogador.atualizaTelaPosJogada(mesa);
-            if(this.ordem == 2) {
-                System.out.println("SOU JOGADOR: " + this.adversario.getNome());
-            } else {
-                System.out.println("SOU JOGADOR: " + this.jogador.getNome());
-            }
         } else {
             this.mesa = mesa;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
             this.setOrdens(2);
             this.atorJogador.atualizaTelaPosJogada(mesa);
+            this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
+            this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
         }
     }
 
