@@ -168,14 +168,14 @@ public class AtorJogador {
             player = this.owner.getMesa().getAdversario();
             maoAVerificar = player.getMao();
         }
-        if(maoAVerificar.isEmpty()){
+        if(maoAVerificar.isEmpty()){/*
             this.owner.addVitoria();
             if(this.owner.getVitorias < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
             }
             else{
                 this.owner.getMesa().setVencedor(player);
-            }
+            }*/
         }
     }
 }

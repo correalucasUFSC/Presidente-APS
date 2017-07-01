@@ -89,55 +89,55 @@ public class TelaMesa extends javax.swing.JFrame {
 
         cartaAdversario0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario0.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario0.setToolTipText("0");
         cartaAdversario0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario1.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario1.setToolTipText("1");
         cartaAdversario1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario2.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario2.setToolTipText("2");
         cartaAdversario2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario3.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario3.setToolTipText("3");
         cartaAdversario3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario4.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario4.setToolTipText("4");
         cartaAdversario4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario5.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario5.setToolTipText("5");
         cartaAdversario5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario6.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario6.setToolTipText("6");
         cartaAdversario6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario7.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario7.setToolTipText("7");
         cartaAdversario7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaAdversario8.setForeground(new java.awt.Color(255, 0, 0));
-        cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaAdversario8.setToolTipText("8");
         cartaAdversario8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -149,55 +149,55 @@ public class TelaMesa extends javax.swing.JFrame {
 
         cartaJogador0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador0.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador0.setToolTipText("0");
         cartaJogador0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador1.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador1.setToolTipText("1");
         cartaJogador1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador2.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador2.setToolTipText("2");
         cartaJogador2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador3.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador3.setToolTipText("3");
         cartaJogador3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador4.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador4.setToolTipText("4");
         cartaJogador4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador5.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador5.setToolTipText("5");
         cartaJogador5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador6.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador6.setToolTipText("6");
         cartaJogador6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador7.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador7.setToolTipText("7");
         cartaJogador7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
         cartaJogador8.setForeground(new java.awt.Color(255, 0, 0));
-        cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
+        cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png"))); // NOI18N
         cartaJogador8.setToolTipText("8");
         cartaJogador8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -250,7 +250,6 @@ public class TelaMesa extends javax.swing.JFrame {
 
         vezAdversario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         vezAdversario.setForeground(new java.awt.Color(51, 255, 0));
-        vezAdversario.setText("<");
 
         javax.swing.GroupLayout painelMesaLayout = new javax.swing.GroupLayout(painelMesa);
         painelMesa.setLayout(painelMesaLayout);
@@ -979,6 +978,10 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));        
     }
     
+    /**
+     * Método para limpar as cartas de um jogador antes de colocar suas cartas no campo no começo da vez.
+     * @param jogador Usar "jogador" ou "adversario".
+     */
     private void limpaCartaJogador(String jogador){
         if(jogador.toLowerCase().equals("jogador")){
             cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
