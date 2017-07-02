@@ -129,7 +129,7 @@ public class Controlador {
      * @param mesa Mesa - Recebe a mesa inteira do outro jogador.
      */
     public void receberJogada(Mesa mesa){
-        if(!primeiraJogada){
+        if(ordem == 1 || !primeiraJogada){
             this.mesa = mesa;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();

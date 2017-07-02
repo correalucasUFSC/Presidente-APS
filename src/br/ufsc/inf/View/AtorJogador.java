@@ -141,6 +141,7 @@ public class AtorJogador {
     }
 
     public void atualizaTelaPosJogada(Mesa mesa) {
+        System.out.println(this.owner.getOrdem());
         if (this.owner.getOrdem() == 1) {
             ArrayList<Carta> cartasJogador = mesa.getJogador().getMao();
             int cartasAdversario = mesa.getAdversario().getMao().size();
