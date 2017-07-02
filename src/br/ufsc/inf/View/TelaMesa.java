@@ -672,7 +672,7 @@ public class TelaMesa extends javax.swing.JFrame {
         pularJogada.setEnabled(true);        
         pularJogada.setVisible(true);
         fazerJogada.setVisible(true);
-        if(cartasDaMesa.size() == 0){
+        if(cartasDaMesa.isEmpty()){
             pularJogada.setEnabled(false);
         }
     }
@@ -891,7 +891,8 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param jogador Usar "jogador" ou "adversario".
      * @param qntCartas Quantidade de cartas que o jogador tem na mão.
      */
-    public void bloqueiaMesa(String jogador, int qntCartas){
+    public void bloqueiaMesa(String jogador){
+        int qntCartas = Constantes.QUANTIDADE_CARTAS_INICIO;
         pularJogada.setEnabled(false);
         if(jogador.equals("jogador")) {
             switch (qntCartas) {

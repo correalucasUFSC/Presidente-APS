@@ -13,7 +13,9 @@ import br.ufsc.inf.leobr.cliente.Cliente;
  */
 public class Constantes {
 
-    
+    //---------CONFIG
+    public static final int QUANTIDADE_CARTAS_INICIO = 10;
+    //---------CONFIG    
 
     //---------Numericos
     public static final int CONEXAO_EXITO = 0;

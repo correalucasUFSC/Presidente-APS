@@ -141,9 +141,9 @@ public class AtorJogador {
             this.owner.getMesa().getCartasMesa().clear();
             this.telaMesa.informarResultado(Constantes.GANHADOR_JOGADA);
             if(this.owner.getOrdem() == 1){
-                this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+                this.telaMesa.bloqueiaMesa("jogador");
             } else {
-                this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+                this.telaMesa.bloqueiaMesa("adversario");
             }            
             atualizaTelaPosJogada(this.owner.getMesa());
         } else {
@@ -207,10 +207,10 @@ public class AtorJogador {
 
     public void bloqueiaTelaJogador(int ordem){
         if(ordem == 1){
-            this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+            this.telaMesa.bloqueiaMesa("jogador");
             this.telaMesa.trocaVez("adversario");
         } else {
-            this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+            this.telaMesa.bloqueiaMesa("adversario");
             this.telaMesa.trocaVez("jogador");
         }
     }
