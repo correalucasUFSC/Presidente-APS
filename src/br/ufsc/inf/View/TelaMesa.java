@@ -1059,6 +1059,7 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param jogador Usar "jogador" ou "adversario".
      */
     private void limpaCartaJogador(String jogador){
+        this.cartasSelecionadas = 0;
         if(jogador.toLowerCase().equals("jogador")){
             cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
@@ -1108,6 +1109,7 @@ public class TelaMesa extends javax.swing.JFrame {
      * Método para limpar todas as cartas da mesa e dos jogadores.
      */
     public void limpaMesa(){
+        this.cartasSelecionadas = 0;
         cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
