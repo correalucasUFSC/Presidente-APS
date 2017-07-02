@@ -214,20 +214,28 @@ public class AtorJogador {
             this.telaMesa.trocaVez("jogador");
         }
     }
+    
+    public void mudaQuantidadeVitoriasJogador(int vitorias, String jogador){
+        this.telaMesa.aumentaVitoria(jogador, vitorias);
+    }
 
     private void verificaEstadoPartida() {
         ArrayList<Carta> maoAVerificar;
         Jogador player;
+        String jogador;
         if(this.owner.getOrdem() == 1){
             player = this.owner.getMesa().getJogador();
-            maoAVerificar = player.getMao();            
+            maoAVerificar = player.getMao();  
+            jogador = "jogador";
         }
         else{
             player = this.owner.getMesa().getAdversario();
             maoAVerificar = player.getMao();
+            jogador = "adversario";
         }
         if(maoAVerificar.isEmpty()){
             this.owner.addVitoria();
+            mudaQuantidadeVitoriasJogador(this.owner.getVitorias(), jogador);
             if(this.owner.getVitorias() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
                 this.owner.iniciaNovaRodada();

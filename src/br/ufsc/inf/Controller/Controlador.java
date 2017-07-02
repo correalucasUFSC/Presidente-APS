@@ -147,6 +147,7 @@ public class Controlador {
             this.jogador = this.mesa.getJogador();
             this.atorJogador.atualizaTelaPosJogada(mesa);
             this.atorJogador.bloqueiaTelaJogador(this.ordem);
+            
             this.atorNetGames.enviarJogada(mesa);
         } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
             if (ordem == 1 || !primeiraJogada) {
