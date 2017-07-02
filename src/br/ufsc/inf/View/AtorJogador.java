@@ -176,6 +176,9 @@ public class AtorJogador {
             if(this.owner.getMesa().getJogador() == this.owner.getMesa().getPresidente()){
                 this.telaMesa.trocaPresidente("jogador");
             }
+            else if(this.owner.getMesa().getPresidente() != null){
+                this.telaMesa.trocaPresidente("adversario");
+            }
         } else {
             this.telaMesa.trocaVez("adversario");
             int cartasJogador = mesa.getJogador().getMao().size();
@@ -184,6 +187,9 @@ public class AtorJogador {
             this.telaMesa.atualizaTelaAdversario(cartasJogador, cartasAdversario, cartasMesa);
             if(this.owner.getMesa().getAdversario() == this.owner.getMesa().getPresidente()){
                 this.telaMesa.trocaPresidente("adversario");
+            }
+            else if(this.owner.getMesa().getPresidente() != null){
+                this.telaMesa.trocaPresidente("jogador");
             }
         }
     }
