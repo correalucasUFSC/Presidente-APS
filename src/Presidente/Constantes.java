@@ -35,8 +35,6 @@ public class Constantes {
     public static final int PERDEDOR_JOGADA = 18;
     public static final int VENCEDOR_JOGO = 19;
     public static final int PERDEDOR_JOGO = 20;
-    public static final int a2 = 21;
-    public static final int a1 = 22;
     //---------Numericos
     
     //---------Strings

@@ -149,6 +149,7 @@ public class Controlador {
             this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getJogador().getRodadasGanhas(), "jogador");
             this.atorJogador.atualizaTelaPosJogada(mesa);
             this.atorJogador.bloqueiaTelaJogador(this.ordem);
+            this.atorJogador.informarResultado(Constantes.VOCE_PERDEU_RODADA);
             this.atorNetGames.enviarJogada(mesa);
         } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
             if (ordem == 1 || !primeiraJogada) {
@@ -192,6 +193,7 @@ public class Controlador {
         this.mesa.setTipoJogada(2);
         this.atorNetGames.enviarJogada(this.mesa);
         this.atorJogador.atualizaTelaPosJogada(this.mesa);
+        this.atorJogador.informarResultado(Constantes.VOCE_GANHOU_RODADA);
     }
 
     /**
