@@ -137,12 +137,15 @@ public class AtorJogador {
     public void solicitacaoPularJogada() {
         int ganhador = this.owner.getMesa().aumentaQntJogadasPuladas();
         if(ganhador == this.owner.getOrdem()){
-            //LIMPA A MESA E DEIXA O CARA JOGAR DNV
+            this.owner.getMesa().getCartasMesa().clear();
+            this.telaMesa.informarResultado(Constantes.GANHADOR_JOGADA);
+            atualizaTelaPosJogada(this.owner.getMesa());
+        } else {
+            this.owner.setDaVez(false);
+            this.atualizaTelaPosJogada(this.owner.getMesa());
+            this.verificaEstadoPartida();
+            this.owner.enviarJogada();             
         }
-        this.owner.setDaVez(false);
-        this.atualizaTelaPosJogada(this.owner.getMesa());
-        this.verificaEstadoPartida();
-        this.owner.enviarJogada(); 
     }
 
     public void cartaSelecionadaPos(int posicao) {
