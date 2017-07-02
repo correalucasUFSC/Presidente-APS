@@ -129,7 +129,6 @@ public class AtorJogador {
         }
         if(jogadaValida){
             this.owner.getMesa().trocaUltimoJogadorQueSoltouCarta(atual);
-            this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
             this.verificaEstadoPartida();
             this.owner.enviarJogada(); 
@@ -151,8 +150,7 @@ public class AtorJogador {
         } else {
             this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
-            this.verificaEstadoPartida();
-            this.owner.enviarJogada();      
+            this.verificaEstadoPartida();  
         }
     }
 
@@ -238,6 +236,9 @@ public class AtorJogador {
             else{
                 this.owner.getMesa().setVencedor(player);
             }
+        }
+        else{
+            this.owner.enviarJogada();
         }
     }
 }
