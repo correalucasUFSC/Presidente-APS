@@ -128,7 +128,6 @@ public class AtorJogador {
             atual = this.owner.getMesa().getAdversario();
         }
         if(jogadaValida){
-            this.owner.getMesa().zeraQntJogadasPuladas();
             this.owner.getMesa().trocaUltimoJogadorQueSoltouCarta(atual);
             this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
@@ -138,14 +137,16 @@ public class AtorJogador {
     }
 
     public void solicitacaoPularJogada() {
-        this.owner.getMesa().aumentaQntJogadasPuladas();
         Jogador ultimoAJogar = this.owner.getMesa().getUltimoJogadorQueSoltouCarta();
-        Jogador atual = this.owner.getOrdem() == 1 ? this.owner.getMesa().getJogador() :
-                this.owner.getMesa().getAdversario();
+        Jogador atual = this.owner.getOrdem() == 1 ? this.owner.getMesa().getJogador() : this.owner.getMesa().getAdversario();
         if(ultimoAJogar == atual){
-            System.out.println("chegou aqui");
             this.owner.getMesa().getCartasMesa().clear();
             this.telaMesa.informarResultado(Constantes.GANHADOR_JOGADA);
+            if(this.owner.getOrdem() == 1){
+                this.telaMesa.bloqueiaMesa("jogador", this.owner.getMesa().getJogador().getMao().size());
+            } else {
+                this.telaMesa.bloqueiaMesa("adversario", this.owner.getMesa().getAdversario().getMao().size());
+            }            
             atualizaTelaPosJogada(this.owner.getMesa());
         } else {
             this.owner.setDaVez(false);
