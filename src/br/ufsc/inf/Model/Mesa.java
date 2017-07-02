@@ -25,6 +25,7 @@ public class Mesa implements Jogada {
     protected Jogador daVez;
     protected ArrayList<Carta> cartasDaMesa = new ArrayList<Carta>(); 
     protected int qntJogadasPuladas = 0;
+    protected int ultimoJogadorQueSoltouCarta = 0;
     
     public Mesa(){
         
@@ -105,15 +106,25 @@ public class Mesa implements Jogada {
         return this.qntJogadasPuladas;
     }
     
-    public void aumentaQntJogadasPuladas(){
+    public int aumentaQntJogadasPuladas(){
         if(++qntJogadasPuladas == 2){
             cartasDaMesa.clear();
             qntJogadasPuladas = 0;
+            return getUltimoJogadorQueSoltouCarta();
         }
+        return 0;
     }
     
     public void zeraQntJogadasPuladas(){
         this.qntJogadasPuladas = 0;
+    }
+    
+    public int getUltimoJogadorQueSoltouCarta(){
+        return this.ultimoJogadorQueSoltouCarta;
+    }
+    
+    public void trocaUltimoJogadorQueSoltouCarta(int ordem){
+        this.ultimoJogadorQueSoltouCarta = ordem;
     }
     
     
