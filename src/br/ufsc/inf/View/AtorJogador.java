@@ -5,6 +5,7 @@
  */
 package br.ufsc.inf.View;
 
+import Presidente.Constantes;
 import br.ufsc.inf.Controller.Controlador;
 import br.ufsc.inf.Model.Carta;
 import br.ufsc.inf.Model.Jogador;
@@ -71,7 +72,7 @@ public class AtorJogador {
     }
 
     public boolean tratarJogada(ArrayList<Carta> mao) {
-        int retorno = 12;
+        int retorno = Constantes.JOGADA_INVALIDA;
         boolean continua = false;
         ArrayList<Carta> selecionadas = new ArrayList<>();
         for (Carta carta : mao) {
@@ -131,6 +132,13 @@ public class AtorJogador {
         }
     }
 
+    public void solicitacaoPularJogada() {
+        this.owner.setDaVez(false);
+        this.atualizaTelaPosJogada(this.owner.getMesa());
+        this.verificaEstadoPartida();
+        this.owner.enviarJogada(); 
+    }
+
     public void cartaSelecionadaPos(int posicao) {
         if (this.owner.getOrdem() == 1) {
             List<Carta> mao = this.owner.getMesa().getJogador().getMao();
@@ -142,8 +150,8 @@ public class AtorJogador {
     }
 
     public void atualizaTelaPosJogada(Mesa mesa) {
-        System.out.println(this.owner.getOrdem());
         if (this.owner.getOrdem() == 1) {
+            this.telaMesa.trocaVez("jogador");
             ArrayList<Carta> cartasJogador = mesa.getJogador().getMao();
             int cartasAdversario = mesa.getAdversario().getMao().size();
             ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
@@ -152,6 +160,7 @@ public class AtorJogador {
                 this.telaMesa.trocaPresidente("jogador");
             }
         } else {
+            this.telaMesa.trocaVez("adversario");
             int cartasJogador = mesa.getJogador().getMao().size();
             ArrayList<Carta> cartasAdversario = mesa.getAdversario().getMao();
             ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
@@ -165,9 +174,15 @@ public class AtorJogador {
     public void atualizaNomeJogador(String jogador, String nome) {
         if (jogador.toLowerCase().equals("jogador")) {
             this.telaMesa.trocaNomeJogador(nome);
+            this.telaMesa.aumentaVitoria("jogador", 0);
         } else {
             this.telaMesa.trocaNomeAdversario(nome);
+            this.telaMesa.aumentaVitoria("adversario", 0);
         }
+    }
+    
+    public void mostraBotoes(){
+        this.telaMesa.antesJogada();
     }
 
     public void bloqueiaTelaJogador(int ordem){

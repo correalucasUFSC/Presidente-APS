@@ -122,6 +122,7 @@ public class Controlador {
             this.atorJogador.atualizaTelaPosJogada(this.mesa);
             this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
             this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
+            this.atorJogador.mostraBotoes();
         }
     }
     
