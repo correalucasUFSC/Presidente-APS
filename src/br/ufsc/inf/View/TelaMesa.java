@@ -645,7 +645,7 @@ public class TelaMesa extends javax.swing.JFrame {
         colocaCartasDaMesa(cartasMesa); 
         colocaCartasDaMao("jogador", cartasJogador);
         adicionaEventosNasCartas("jogador", cartasJogador.size());
-        antesJogada();
+        antesJogada(cartasMesa);
     }
 
     /**
@@ -659,11 +659,19 @@ public class TelaMesa extends javax.swing.JFrame {
         colocaCartasDaMesa(cartasMesa);
         colocaCartasDaMao("adversario", cartasAdversario);
         adicionaEventosNasCartas("adversario", cartasAdversario.size());
-        antesJogada();
+        antesJogada(cartasMesa);
     }
     
-    public void antesJogada(){           
+    public void antesJogada(ArrayList<Carta> cartasDaMesa){           
         pularJogada.setEnabled(true);        
+        pularJogada.setVisible(true);
+        fazerJogada.setVisible(true);
+        if(cartasDaMesa.size() == 0){
+            pularJogada.setEnabled(false);
+        }
+    }
+    
+    public void inicia(){    
         pularJogada.setVisible(true);
         fazerJogada.setVisible(true);
     }

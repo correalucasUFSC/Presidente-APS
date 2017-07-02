@@ -199,7 +199,7 @@ public class AtorJogador {
     }
     
     public void mostraBotoes(){
-        this.telaMesa.antesJogada();
+        this.telaMesa.inicia();
     }
 
     public void bloqueiaTelaJogador(int ordem){
