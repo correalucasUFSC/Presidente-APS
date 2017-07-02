@@ -352,16 +352,14 @@ public class Controlador {
     }
 
     public void finalizaPartida() {
-        //variavel resultado
         if(this.jogador == this.getMesa().getVencedor()){
-            //resultado = constante para informar que o jogador venceu
+            this.atorJogador.informarResultado(Constantes.VENCEDOR_JOGO);
         }
         else{
-            //resultado = constante para informar que o adversario venceu
+            this.atorJogador.informarResultado(Constantes.PERDEDOR_JOGO);
         }
         this.atorJogador.bloqueiaTelaJogador(1);
         this.atorJogador.bloqueiaTelaJogador(2);
-        //this.atorJogador.informarResultado(resultado);
         this.mesa.setTipoJogada(3);
     }
 }

@@ -41,7 +41,7 @@ public class AtorJogador {
         this.informarResultado(resultado);
     }
 
-    private void informarResultado(int resultado) {
+    public void informarResultado(int resultado) {
         this.telaMesa.informarResultado(resultado);
     }
 
@@ -248,9 +248,5 @@ public class AtorJogador {
         else{
             this.owner.enviarJogada();
         }
-    }
-
-    public void informarResultado() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

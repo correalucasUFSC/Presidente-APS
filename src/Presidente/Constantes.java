@@ -33,6 +33,10 @@ public class Constantes {
     public static final int VOCE_NAO_TEM_CARTAS_SELECIONADAS = 16;
     public static final int GANHADOR_JOGADA = 17;
     public static final int PERDEDOR_JOGADA = 18;
+    public static final int VENCEDOR_JOGO = 19;
+    public static final int PERDEDOR_JOGO = 20;
+    public static final int a2 = 21;
+    public static final int a1 = 22;
     //---------Numericos
     
     //---------Strings
@@ -57,6 +61,8 @@ public class Constantes {
     public static final String VOCE_NAO_TEM_CARTAS_SELECIONADAS_STRING = "Você não selecionou nenhuma carta.";
     public static final String GANHADOR_JOGADA_STRING = "Você ganhou a jogada. Parabêns!";
     public static final String PERDEDOR_JOGADA_STRING = "Você perdeu a jogada. :(";
+    public static final String VENCEDOR_JOGO_STRING = "PARABÊNS!!! Você ganhou o jogo!";
+    public static final String PERDEDOR_JOGO_STRING = "Parece que você não teve sorte dessa vez. Você perdeu o jogo.";
     
     //---------Strings
     
