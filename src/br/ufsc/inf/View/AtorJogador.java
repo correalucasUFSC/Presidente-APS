@@ -131,7 +131,6 @@ public class AtorJogador {
             this.owner.getMesa().trocaUltimoJogadorQueSoltouCarta(atual);
             this.atualizaTelaPosJogada(this.owner.getMesa());
             this.verificaEstadoPartida();
-            this.owner.enviarJogada(); 
         }
     }
 
