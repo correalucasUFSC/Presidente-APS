@@ -604,6 +604,12 @@ public class TelaMesa extends javax.swing.JFrame {
                 break;
             case Constantes.JOGADA_INVALIDA:
                 JOptionPane.showMessageDialog(this, Constantes.JOGADA_INVALIDA_STRING);
+                break;   
+            case Constantes.GANHADOR_JOGADA:
+                JOptionPane.showMessageDialog(this, Constantes.GANHADOR_JOGADA_STRING);
+                break;   
+            case Constantes.PERDEDOR_JOGADA:
+                JOptionPane.showMessageDialog(this, Constantes.PERDEDOR_JOGADA_STRING);
                 break;             
         }
     }

@@ -26,11 +26,13 @@ public class Constantes {
     public static final int JOGO_EM_ANDAMENTO = 7;
     public static final int INICIAR_PARTIDA_FALHOU = 8;
     public static final int SOLICITADO_INICIO_PARTIDA = 9;
-    public static final int VOCE_GANHOU_RODADA = 13;
     public static final int JOGADA_INVALIDA = 12;
+    public static final int VOCE_GANHOU_RODADA = 13;
     public static final int VOCE_PERDEU_RODADA = 14;
     public static final int VOCE_TEM_CARTAS_SELECIONADAS = 15;
     public static final int VOCE_NAO_TEM_CARTAS_SELECIONADAS = 16;
+    public static final int GANHADOR_JOGADA = 17;
+    public static final int PERDEDOR_JOGADA = 18;
     //---------Numericos
     
     //---------Strings
@@ -53,6 +55,9 @@ public class Constantes {
     public static final String VOCE_PERDEU_RODADA_STRING = "Que azar, você perdeu a rodada.";
     public static final String VOCE_TEM_CARTAS_SELECIONADAS_STRING = "Você tem cartas selecionadas. Para pular a jogada você não pode ter nenhuma carta selecionada.";
     public static final String VOCE_NAO_TEM_CARTAS_SELECIONADAS_STRING = "Você não selecionou nenhuma carta.";
+    public static final String GANHADOR_JOGADA_STRING = "Você ganhou a jogada. Parabêns!";
+    public static final String PERDEDOR_JOGADA_STRING = "Você perdeu a jogada. :(";
+    
     //---------Strings
     
     
