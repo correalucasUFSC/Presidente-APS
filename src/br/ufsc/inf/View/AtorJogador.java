@@ -119,14 +119,17 @@ public class AtorJogador {
 
     public void solicitacaoTratarJogada() {
         boolean jogadaValida;
+        Jogador atual;
         if (this.owner.getOrdem() == 1) {
             jogadaValida = this.tratarJogada(this.owner.getMesa().getJogador().getMao());
+            atual = this.owner.getMesa().getJogador();
         } else {
             jogadaValida = this.tratarJogada(this.owner.getMesa().getAdversario().getMao());
+            atual = this.owner.getMesa().getAdversario();
         }
         if(jogadaValida){
             this.owner.getMesa().zeraQntJogadasPuladas();
-            this.owner.getMesa().trocaUltimoJogadorQueSoltouCarta(this.owner.getOrdem());
+            this.owner.getMesa().trocaUltimoJogadorQueSoltouCarta(atual);
             this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
             this.verificaEstadoPartida();
@@ -135,8 +138,12 @@ public class AtorJogador {
     }
 
     public void solicitacaoPularJogada() {
-        Jogador ganhador = this.owner.getMesa().aumentaQntJogadasPuladas();
-        if(ganhador == this.owner.){
+        this.owner.getMesa().aumentaQntJogadasPuladas();
+        Jogador ultimoAJogar = this.owner.getMesa().getUltimoJogadorQueSoltouCarta();
+        Jogador atual = this.owner.getOrdem() == 1 ? this.owner.getMesa().getJogador() :
+                this.owner.getMesa().getAdversario();
+        if(ultimoAJogar == atual){
+            System.out.println("chegou aqui");
             this.owner.getMesa().getCartasMesa().clear();
             this.telaMesa.informarResultado(Constantes.GANHADOR_JOGADA);
             atualizaTelaPosJogada(this.owner.getMesa());

@@ -107,9 +107,9 @@ public class Mesa implements Jogada {
     }
     
     public void aumentaQntJogadasPuladas(){
-        if(++qntJogadasPuladas == 2){
-            cartasDaMesa.clear();
-            qntJogadasPuladas = 0;
+        this.qntJogadasPuladas++;
+        if(this.qntJogadasPuladas == 2){
+            this.qntJogadasPuladas = 0;
         }
     }
     
@@ -123,6 +123,14 @@ public class Mesa implements Jogada {
     
     public void trocaUltimoJogadorQueSoltouCarta(){
         this.ultimoJogadorQueSoltouCarta = this.daVez;
+    }
+
+    public void trocaUltimoJogadorQueSoltouCarta(Jogador atual) {
+        this.ultimoJogadorQueSoltouCarta = atual;
+    }
+
+    public void limpaUltimoJogadorQueSoltouCarta() {
+        this.ultimoJogadorQueSoltouCarta = null;
     }
     
     
