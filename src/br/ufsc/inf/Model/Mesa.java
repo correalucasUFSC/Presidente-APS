@@ -112,5 +112,9 @@ public class Mesa implements Jogada {
         }
     }
     
+    public void zeraQntJogadasPuladas(){
+        this.qntJogadasPuladas = 0;
+    }
+    
     
 }

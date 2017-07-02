@@ -125,6 +125,7 @@ public class AtorJogador {
             jogadaValida = this.tratarJogada(this.owner.getMesa().getAdversario().getMao());
         }
         if(jogadaValida){
+            this.owner.getMesa().zeraQntJogadasPuladas();
             this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
             this.verificaEstadoPartida();
