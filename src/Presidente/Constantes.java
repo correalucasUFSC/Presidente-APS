@@ -26,6 +26,8 @@ public class Constantes {
     public static final int JOGO_EM_ANDAMENTO = 7;
     public static final int INICIAR_PARTIDA_FALHOU = 8;
     public static final int SOLICITADO_INICIO_PARTIDA = 9;
+    public static final int VOCE_GANHOU_RODADA = 13;
+    public static final int VOCE_PERDEU_RODADA = 14;
     //---------Numericos
     
     //---------Strings
@@ -43,6 +45,8 @@ public class Constantes {
     public static final String INSIRA_ENDERECO_SERVIDOR = "Insira o endereco do servidor";
     public static final String INSIRA_NOME_JOGADOR = "Insira o seu nome";
     public static final String IMAGE_PATH = "/br/ufsc/inf/view/imgs/";
+    public static final String VOCE_GANHOU_RODADA_STRING = "Parabêns! Você ganhou a rodada.";
+    public static final String VOCE_PERDEU_RODADA_STRING = "Que azar, você perdeu a rodada.";
     //---------Strings
     
     

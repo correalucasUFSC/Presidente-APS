@@ -539,6 +539,12 @@ public class TelaMesa extends javax.swing.JFrame {
             case Constantes.SOLICITADO_INICIO_PARTIDA:
                 JOptionPane.showMessageDialog(this, Constantes.SOLICITADO_INICIO_PARTIDA_STRING);
                 break;
+            case Constantes.VOCE_GANHOU_RODADA:
+                JOptionPane.showMessageDialog(this, Constantes.VOCE_GANHOU_RODADA_STRING);
+                break;
+            case Constantes.VOCE_PERDEU_RODADA:
+                JOptionPane.showMessageDialog(this, Constantes.VOCE_PERDEU_RODADA_STRING);
+                break;
             case 12:
                 JOptionPane.showMessageDialog(this, "Jogada inválida");
                 break;             
