@@ -135,8 +135,8 @@ public class AtorJogador {
     }
 
     public void solicitacaoPularJogada() {
-        int ganhador = this.owner.getMesa().aumentaQntJogadasPuladas();
-        if(ganhador == this.owner.getOrdem()){
+        Jogador ganhador = this.owner.getMesa().aumentaQntJogadasPuladas();
+        if(ganhador == this.owner.){
             this.owner.getMesa().getCartasMesa().clear();
             this.telaMesa.informarResultado(Constantes.GANHADOR_JOGADA);
             atualizaTelaPosJogada(this.owner.getMesa());
@@ -144,7 +144,7 @@ public class AtorJogador {
             this.owner.setDaVez(false);
             this.atualizaTelaPosJogada(this.owner.getMesa());
             this.verificaEstadoPartida();
-            this.owner.enviarJogada();             
+            this.owner.enviarJogada();      
         }
     }
 

@@ -641,10 +641,10 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasMesa Lista de cartas da mesa.
      */
     public void atualizaTelaJogador(ArrayList<Carta> cartasJogador, int cartasAdversario, ArrayList<Carta> cartasMesa) {
-        escondeCartas("adversario", cartasAdversario);
-        colocaCartasDaMesa(cartasMesa);
-        colocaCartasDaMao("jogador", cartasJogador);
-        adicionaEventosNasCartas("jogador", cartasJogador.size());
+        escondeCartas("adversario", cartasAdversario);                          System.out.println("1");
+        colocaCartasDaMesa(cartasMesa);                                         System.out.println("2");
+        colocaCartasDaMao("jogador", cartasJogador);                            System.out.println("3");
+        adicionaEventosNasCartas("jogador", cartasJogador.size());              System.out.println("4");
         antesJogada();
     }
 
