@@ -235,6 +235,11 @@ public class TelaMesa extends javax.swing.JFrame {
 
         fazerJogada.setText("Fazer jogada");
         fazerJogada.setEnabled(false);
+        fazerJogada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fazerJogadaActionPerformed(evt);
+            }
+        });
 
         vitoriaAdversario.setForeground(new java.awt.Color(0, 204, 0));
         vitoriaAdversario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -456,6 +461,10 @@ public class TelaMesa extends javax.swing.JFrame {
         this.atorJogador.desconectar();
     }//GEN-LAST:event_jMenuDesconectarMouseClicked
 
+    private void fazerJogadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fazerJogadaActionPerformed
+        realizarJogada();
+    }//GEN-LAST:event_fazerJogadaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cartaAdversario0;
@@ -669,29 +678,93 @@ public class TelaMesa extends javax.swing.JFrame {
         int tamanho = posicoes.length;
         if(jogador.toLowerCase().equals("adversario")){
             for(int i = 0; i < tamanho; i++){                
-                if(i == 0) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 1) cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 2) cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 3) cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 4) cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 5) cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 6) cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 7) cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 8) cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 9) cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                switch(posicoes[i]){
+                    case 0:
+                        cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario0.setText("");
+                        break;
+                    case 1:
+                        cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario1.setText("");
+                        break;
+                    case 2:
+                        cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario2.setText("");
+                        break;
+                    case 3:
+                        cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario3.setText("");
+                        break;
+                    case 4:
+                        cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario4.setText("");
+                        break;
+                    case 5:
+                        cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario5.setText("");
+                        break;
+                    case 6:
+                        cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario6.setText("");
+                        break;
+                    case 7:
+                        cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario7.setText("");
+                        break;
+                    case 8:
+                        cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario8.setText("");
+                        break;
+                    case 9:
+                        cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaAdversario9.setText("");
+                        break;
+                }
             }
         } else if(jogador.toLowerCase().equals("jogador")){
             for(int i = 0; i < tamanho; i++){                
-                if(i == 0) cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 1) cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 2) cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 3) cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 4) cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 5) cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 6) cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 7) cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 8) cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
-                if(i == 9) cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                switch(posicoes[i]){
+                    case 0:
+                        cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador0.setText("");
+                        break;
+                    case 1:
+                        cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador1.setText("");
+                        break;
+                    case 2:
+                        cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador2.setText("");
+                        break;
+                    case 3:
+                        cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador3.setText("");
+                        break;
+                    case 4:
+                        cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador4.setText("");
+                        break;
+                    case 5:
+                        cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador5.setText("");
+                        break;
+                    case 6:
+                        cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador6.setText("");
+                        break;
+                    case 7:
+                        cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador7.setText("");
+                        break;
+                    case 8:
+                        cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador8.setText("");
+                        break;
+                    case 9:
+                        cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-oculta.png")));
+                        cartaJogador9.setText("");
+                        break;
+                }
             }
         }        
     }    
@@ -996,7 +1069,17 @@ public class TelaMesa extends javax.swing.JFrame {
             cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
-            cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));            
+            cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+            cartaJogador0.setText("");
+            cartaJogador1.setText("");
+            cartaJogador2.setText("");
+            cartaJogador3.setText("");
+            cartaJogador4.setText("");
+            cartaJogador5.setText("");
+            cartaJogador6.setText("");
+            cartaJogador7.setText("");  
+            cartaJogador8.setText("");
+            cartaJogador9.setText("");        
         } else {
             cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
@@ -1007,7 +1090,17 @@ public class TelaMesa extends javax.swing.JFrame {
             cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
             cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
-            cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));            
+            cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));    
+            cartaAdversario0.setText("");
+            cartaAdversario1.setText("");
+            cartaAdversario2.setText("");
+            cartaAdversario3.setText("");
+            cartaAdversario4.setText("");
+            cartaAdversario5.setText("");
+            cartaAdversario6.setText("");
+            cartaAdversario7.setText("");  
+            cartaAdversario8.setText("");
+            cartaAdversario9.setText("");          
         }
     }
     
@@ -1038,7 +1131,27 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
-        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); 
+        cartaAdversario0.setText("");
+        cartaAdversario1.setText("");
+        cartaAdversario2.setText("");
+        cartaAdversario3.setText("");
+        cartaAdversario4.setText("");
+        cartaAdversario5.setText("");
+        cartaAdversario6.setText("");
+        cartaAdversario7.setText("");  
+        cartaAdversario8.setText("");
+        cartaAdversario9.setText("");     
+        cartaJogador0.setText("");
+        cartaJogador1.setText("");
+        cartaJogador2.setText("");
+        cartaJogador3.setText("");
+        cartaJogador4.setText("");
+        cartaJogador5.setText("");
+        cartaJogador6.setText("");
+        cartaJogador7.setText("");  
+        cartaJogador8.setText("");
+        cartaJogador9.setText("");     
     }
     
     
