@@ -18,7 +18,6 @@ import rede.AtorNetGames;
 /**
  * @author Lucas Corrêa, Thiago Pauli
  */
-
 public class Controlador {
 
     protected AtorJogador atorJogador;
@@ -43,7 +42,9 @@ public class Controlador {
         this.atorJogador.mostraInterface();
     }
 
-    /** Método para conectar
+    /**
+     * Método para conectar
+     *
      * @return int
      */
     public int conectar() {
@@ -62,7 +63,9 @@ public class Controlador {
         }
     }
 
-    /** Método para desconectar
+    /**
+     * Método para desconectar
+     *
      * @return int
      */
     public int desconectar() {
@@ -79,7 +82,9 @@ public class Controlador {
         }
     }
 
-    /** Método para iniciar a partida
+    /**
+     * Método para iniciar a partida
+     *
      * @return int
      */
     public int iniciarPartida() {
@@ -99,7 +104,9 @@ public class Controlador {
         }
     }
 
-    /** Método para iniciar nova partida
+    /**
+     * Método para iniciar nova partida
+     *
      * @param ordem Integer - Ordem dos jogadores.
      */
     public void iniciarNovaPartida(Integer ordem) {
@@ -125,43 +132,45 @@ public class Controlador {
             this.atorJogador.mostraBotoes();
         }
     }
-    
-    /** Método para receber jogada
+
+    /**
+     * Método para receber jogada
+     *
      * @param mesa Mesa - Recebe a mesa inteira do outro jogador.
      */
-    public void receberJogada(Mesa mesa){
-        if(ordem == 1 || !primeiraJogada){
+    public void receberJogada(Mesa mesa) {
+        if (mesa.getTipoJogada() == 2) {
             this.mesa = mesa;
-            this.daVez = true;
-            if(this.mesa.getPresidente() != null){
-                this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
-                Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador() ?
-                this.mesa.getJogador() : this.mesa.getAdversario();
-                this.mesa.setCu(cu);
-                Jogador atual = this.getOrdem() == 1 ? this.jogador : this.adversario;
-                if(atual != this.mesa.getPresidente()){
-                    this.daVez = false;
-                }
+            mesa.setTipoJogada(0);
+            this.daVez = false;
+            this.adversario = this.mesa.getAdversario();
+            this.jogador = this.mesa.getJogador();
+            this.atorJogador.atualizaTelaPosJogada(mesa);
+            this.atorNetGames.enviarJogada(mesa);
+        } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
+            if (ordem == 1 || !primeiraJogada) {
+                this.mesa = mesa;
+                this.daVez = true;
+                this.adversario = this.mesa.getAdversario();
+                this.jogador = this.mesa.getJogador();
+
+                this.atorJogador.atualizaTelaPosJogada(mesa);
+            } else {
+                this.primeiraJogada = false;
+                this.mesa = mesa;
+                this.adversario = this.mesa.getAdversario();
+                this.jogador = this.mesa.getJogador();
+                this.setOrdens(2);
+                this.atorJogador.atualizaTelaPosJogada(mesa);
+                this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
+                this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
+                this.atorJogador.bloqueiaTelaJogador(2);
             }
-            
-            this.adversario = this.mesa.getAdversario();
-            this.jogador = this.mesa.getJogador();
-            
-            this.atorJogador.atualizaTelaPosJogada(mesa);
-        } else {
-            this.primeiraJogada = false;
-            this.mesa = mesa;
-            this.adversario = this.mesa.getAdversario();
-            this.jogador = this.mesa.getJogador();
-            this.setOrdens(2);
-            this.atorJogador.atualizaTelaPosJogada(mesa);
-            this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
-            this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
-            this.atorJogador.bloqueiaTelaJogador(2);
         }
+
     }
-    
-    public void iniciaNovaRodada(){
+
+    public void iniciaNovaRodada() {
         this.mesa.getCartasMesa().clear();
         ArrayList<Carta> baralho = this.criaBaralho();
         baralho = this.embaralha(baralho);
@@ -171,15 +180,16 @@ public class Controlador {
         this.adversario.setMao(maoJogador2);
         this.addVitoria();
         this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
-        Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador() ?
-                this.mesa.getJogador() : this.mesa.getAdversario();
+        Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador()
+                ? this.mesa.getJogador() : this.mesa.getAdversario();
         this.mesa.setCu(cu);
         this.trocarCartas();
+        this.mesa.setTipoJogada(2);
         this.atorNetGames.enviarJogada(this.mesa);
-        this.atorJogador.atualizaTelaPosJogada(this.mesa);        
+        this.atorJogador.atualizaTelaPosJogada(this.mesa);
     }
 
-    /** 
+    /**
      * Método para limpar tudo
      */
     private void limpar() {
@@ -188,9 +198,11 @@ public class Controlador {
         this.mesa = new Mesa();
     }
 
-    /** 
+    /**
      * Método para criar baralho
-     * @return ArrayList<Carta> - Baralho completo com 4 naipes (A, B, C e D) e 14 cartas cada naipe.
+     *
+     * @return ArrayList<Carta> - Baralho completo com 4 naipes (A, B, C e D) e
+     * 14 cartas cada naipe.
      */
     private ArrayList<Carta> criaBaralho() {
         ArrayList<Carta> baralho = new ArrayList<>();
@@ -203,8 +215,9 @@ public class Controlador {
         return baralho;
     }
 
-    /** 
+    /**
      * Método para embaralhar o baralho.
+     *
      * @return List<Carta> - Baralho completo embaralhado.
      */
     private ArrayList<Carta> embaralha(ArrayList<Carta> baralho) {
@@ -212,38 +225,41 @@ public class Controlador {
         return baralho;
     }
 
-    /** 
+    /**
      * Método para distribuir a mão para jogador.
+     *
      * @param ordem int - Ordem do jogador.
      * @param baralho List<Carta> - Baralho de cartas.
-     * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a mão do jogador).
+     * @return List<Carta> - Restantes das cartas do baralho (Não usadas para a
+     * mão do jogador).
      */
     private ArrayList<Carta> distribuiMao(int ordem, ArrayList<Carta> baralho) {
         ArrayList<Carta> baralhoTemp = new ArrayList<Carta>();
         if (ordem == 1) {
-            for(int i = 0; i <= 9; i++){
+            for (int i = 0; i <= 9; i++) {
                 baralhoTemp.add(baralho.get(i));
             }
             return baralhoTemp;
         } else {
-            for(int i = 10; i <= 19; i++){
+            for (int i = 10; i <= 19; i++) {
                 baralhoTemp.add(baralho.get(i));
             }
             return baralhoTemp;
         }
     }
 
-    /** 
+    /**
      * Método para descobrir se é o jogador da vez.
+     *
      * @return boolean - Verifica se ordem é igual a 1.
      */
     public boolean isDaVez() {
         return this.daVez;
     }
 
-
-    /** 
+    /**
      * Método para setar a ordem dos jogadores.
+     *
      * @param ordem int - Ordem dos jogadores.
      */
     private void setOrdens(int ordem) {
@@ -253,14 +269,16 @@ public class Controlador {
 
     /**
      * Método para retornar ordem
+     *
      * @return ordem
      */
     public int getOrdem() {
         return this.ordem;
     }
-    
+
     /**
      * Método para retornar mesa
+     *
      * @return mesa
      */
     public Mesa getMesa() {
@@ -268,9 +286,11 @@ public class Controlador {
     }
 
     /**
-     * Método para enviar jogada, antes de enviar ele bloqueia a tela do jogador atual.
+     * Método para enviar jogada, antes de enviar ele bloqueia a tela do jogador
+     * atual.
      */
     public void enviarJogada() {
+        this.mesa.setTipoJogada(1);
         this.daVez = false;
         this.atorJogador.bloqueiaTelaJogador(this.ordem);
         this.atorNetGames.enviarJogada(this.mesa);
@@ -278,13 +298,14 @@ public class Controlador {
 
     /**
      * Método para verificar vencedor.
+     *
      * @param mao Mão do jogador.
      */
     public void verificaSeJogadorVenceu(ArrayList<Carta> mao) {
-        if(mao.isEmpty()){
+        if (mao.isEmpty()) {
             this.vitorias++;
         }
-        if(this.vitorias == 3){
+        if (this.vitorias == 3) {
             Jogador vencedor = this.ordem == 1 ? this.jogador : this.adversario;
             this.mesa.setVencedor(vencedor);
         }
@@ -308,15 +329,15 @@ public class Controlador {
         ArrayList<Carta> maoPresidente = presidente.getMao();
         ArrayList<Carta> maoCu = cu.getMao();
         Carta cartaMaior = new Carta(0);
-        for(Carta carta : maoCu){
-            if(carta.getValor() > cartaMaior.getValor()){
+        for (Carta carta : maoCu) {
+            if (carta.getValor() > cartaMaior.getValor()) {
                 cartaMaior = carta;
-            }            
+            }
         }
         maoCu.remove(cartaMaior);
         Carta cartaMenor = new Carta(99);
-        for(Carta carta : maoPresidente){
-            if(carta.getValor() < cartaMenor.getValor()){
+        for (Carta carta : maoPresidente) {
+            if (carta.getValor() < cartaMenor.getValor()) {
                 cartaMenor = carta;
             }
         }

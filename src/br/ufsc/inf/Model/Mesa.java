@@ -116,6 +116,14 @@ public class Mesa implements Jogada {
     public void limpaUltimoJogadorQueSoltouCarta() {
         this.ultimoJogadorQueSoltouCarta = null;
     }
+
+    public void setTipoJogada(int tipo) {
+        this.tipoJogada = tipo;
+    }
+
+    public int getTipoJogada() {
+        return this.tipoJogada;
+    }
     
     
 }
