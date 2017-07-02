@@ -23,7 +23,8 @@ public class Mesa implements Jogada {
     protected Jogador vendedorUltimaRodada;
     protected int rodadaAtual;
     protected Jogador daVez;
-    protected ArrayList<Carta> cartasDaMesa = new ArrayList<Carta>();  
+    protected ArrayList<Carta> cartasDaMesa = new ArrayList<Carta>(); 
+    protected int qntJogadasPuladas = 0;
     
     public Mesa(){
         
@@ -98,6 +99,17 @@ public class Mesa implements Jogada {
     
     public Jogador getCu(){
         return this.cu;
+    }
+    
+    public int getQntJogadasPuladas(){
+        return this.qntJogadasPuladas;
+    }
+    
+    public void aumentaQntJogadasPuladas(){
+        if(++qntJogadasPuladas == 2){
+            cartasDaMesa.clear();
+            qntJogadasPuladas = 0;
+        }
     }
     
     

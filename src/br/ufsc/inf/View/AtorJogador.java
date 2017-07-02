@@ -133,6 +133,7 @@ public class AtorJogador {
     }
 
     public void solicitacaoPularJogada() {
+        this.owner.getMesa().aumentaQntJogadasPuladas();
         this.owner.setDaVez(false);
         this.atualizaTelaPosJogada(this.owner.getMesa());
         this.verificaEstadoPartida();
