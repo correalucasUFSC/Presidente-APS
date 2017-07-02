@@ -227,6 +227,7 @@ public class AtorJogador {
             this.owner.addVitoria();
             if(this.owner.getVitorias() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
+                this.owner.iniciaNovaRodada();
             }
             else{
                 this.owner.getMesa().setVencedor(player);
