@@ -234,9 +234,9 @@ public class AtorJogador {
             jogador = "adversario";
         }
         if(maoAVerificar.isEmpty()){
-            this.owner.addVitoria();
-            mudaQuantidadeVitoriasJogador(this.owner.getVitorias(), jogador);
-            if(this.owner.getVitorias() < 3){
+            player.aumentaRodadasGanhas();
+            mudaQuantidadeVitoriasJogador(player.getRodadasGanhas(), jogador);
+            if(player.getRodadasGanhas() < 3){
                 this.owner.getMesa().setVencedorUltimaRodada(player);
                 this.owner.iniciaNovaRodada();
             }
