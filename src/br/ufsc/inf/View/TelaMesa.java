@@ -715,10 +715,22 @@ public class TelaMesa extends javax.swing.JFrame {
     private void colocaCartasDaMesa(ArrayList<Carta> cartasMesa){
         limpaCartasDaMesa();
         int tamanho = cartasMesa.size();
-        if(tamanho >= 1) cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
-        if(tamanho >= 2) cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
-        if(tamanho >= 3) cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(2).getCaminho()))));
-        if(tamanho >= 4) cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
+        if(tamanho >= 1) {
+            cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(0).getCaminho()))));
+            cartaMesa0.setToolTipText(cartasMesa.get(0).getCaminho());
+        }
+        if(tamanho >= 2) {
+            cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(1).getCaminho()))));
+            cartaMesa1.setToolTipText(cartasMesa.get(1).getCaminho());
+        }
+        if(tamanho >= 3) {
+            cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(2).getCaminho()))));
+            cartaMesa2.setToolTipText(cartasMesa.get(2).getCaminho());
+        }
+        if(tamanho >= 4) {
+            cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMesa.get(3).getCaminho()))));
+            cartaMesa3.setToolTipText(cartasMesa.get(3).getCaminho());
+        }
     }
     
     /**
@@ -1062,15 +1074,17 @@ public class TelaMesa extends javax.swing.JFrame {
             this.cartasSelecionadas--;
             if(this.cartasSelecionadas == 0) {
                 fazerJogada.setEnabled(false);  
-                pularJogada.setEnabled(true);  
+                if(cartaMesa0.getToolTipText().length() > 1){
+                    pularJogada.setEnabled(true);   
+                }                  
             }
         } else {
             if(cartasSelecionadas < MAX_CARTAS_SELECIONADAS){
                 this.atorJogador.cartaSelecionadaPos(pos);
                 carta.setText("X");   
                 this.cartasSelecionadas++;
-                fazerJogada.setEnabled(true);    
-                pularJogada.setEnabled(false);              
+                fazerJogada.setEnabled(true);
+                pularJogada.setEnabled(false);            
             } else {
                 //VOCÊ SELECIONOU O MÁXIMO DE CARTAS POSSIVEIS.
             }
