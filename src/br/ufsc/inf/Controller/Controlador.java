@@ -132,9 +132,21 @@ public class Controlador {
     public void receberJogada(Mesa mesa){
         if(ordem == 1 || !primeiraJogada){
             this.mesa = mesa;
+            this.daVez = true;
+            if(this.mesa.getPresidente() != null){
+                this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
+                Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador() ?
+                this.mesa.getJogador() : this.mesa.getAdversario();
+                this.mesa.setCu(cu);
+                Jogador atual = this.getOrdem() == 1 ? this.jogador : this.adversario;
+                if(atual != this.mesa.getPresidente()){
+                    this.daVez = false;
+                }
+            }
+            
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
-            this.daVez = true;
+            
             this.atorJogador.atualizaTelaPosJogada(mesa);
         } else {
             this.primeiraJogada = false;
@@ -150,20 +162,21 @@ public class Controlador {
     }
     
     public void iniciaNovaRodada(){
+        this.mesa.getCartasMesa().clear();
         ArrayList<Carta> baralho = this.criaBaralho();
         baralho = this.embaralha(baralho);
         ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
         ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
         this.jogador.setMao(maoJogador1);
         this.adversario.setMao(maoJogador2);
+        this.addVitoria();
         this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
         Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador() ?
                 this.mesa.getJogador() : this.mesa.getAdversario();
         this.mesa.setCu(cu);
         this.trocarCartas();
         this.atorNetGames.enviarJogada(this.mesa);
-        this.atorJogador.atualizaTelaPosJogada(this.mesa);
-        
+        this.atorJogador.atualizaTelaPosJogada(this.mesa);        
     }
 
     /** 
