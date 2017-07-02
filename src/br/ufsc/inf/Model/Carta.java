@@ -20,6 +20,10 @@ public class Carta implements Jogada{
         this.valor = valor;
         this.naipe = naipe;
     }
+
+    public Carta(int valor) {
+        this.valor = valor;
+    }
     
     public String getCaminho(){
         return this.valor + this.naipe;

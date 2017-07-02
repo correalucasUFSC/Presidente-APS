@@ -73,7 +73,7 @@ public class AtorJogador {
     public boolean tratarJogada(ArrayList<Carta> mao) {
         int retorno = 12;
         boolean continua = false;
-        List<Carta> selecionadas = new ArrayList<>();
+        ArrayList<Carta> selecionadas = new ArrayList<>();
         for (Carta carta : mao) {
             if (carta.isSelecionada()) {
                 selecionadas.add(carta);
@@ -102,6 +102,7 @@ public class AtorJogador {
                         0 : this.owner.getMesa().getCartasMesa().get(0).getValor();
                 if(valorConjunto > valorConjuntoMesa){
                     //jogada valida           
+                    this.owner.getMesa().setCartasDaMesa(selecionadas);
                     mao.removeAll(selecionadas);
                     return true;
                 }
@@ -147,11 +148,17 @@ public class AtorJogador {
             int cartasAdversario = mesa.getAdversario().getMao().size();
             ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
             this.telaMesa.atualizaTelaJogador(cartasJogador, cartasAdversario, cartasMesa);
+            if(this.owner.getMesa().getJogador() == this.owner.getMesa().getPresidente()){
+                this.telaMesa.trocaPresidente("jogador");
+            }
         } else {
             int cartasJogador = mesa.getJogador().getMao().size();
             ArrayList<Carta> cartasAdversario = mesa.getAdversario().getMao();
             ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
             this.telaMesa.atualizaTelaAdversario(cartasJogador, cartasAdversario, cartasMesa);
+            if(this.owner.getMesa().getAdversario() == this.owner.getMesa().getPresidente()){
+                this.telaMesa.trocaPresidente("adversario");
+            }
         }
     }
 

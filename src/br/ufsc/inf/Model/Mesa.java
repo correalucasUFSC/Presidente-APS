@@ -7,6 +7,7 @@ package br.ufsc.inf.Model;
 
 import br.ufsc.inf.leobr.cliente.Jogada;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Lucas Corrêa, Thiago Pauli
@@ -14,8 +15,10 @@ import java.util.ArrayList;
 public class Mesa implements Jogada {
     
     protected Jogador jogador;
+    protected Jogador presidente;
     protected Jogador adversario;
     protected Jogador vencedor;
+    protected Jogador cu;
     protected int tipoJogada;
     protected Jogador vendedorUltimaRodada;
     protected int rodadaAtual;
@@ -24,6 +27,10 @@ public class Mesa implements Jogada {
     
     public Mesa(){
         
+    }
+    
+    public Jogador getVencedorUltimaRodada(){
+        return this.vendedorUltimaRodada;
     }
 
     /** Método para setar jogador principal.
@@ -71,6 +78,26 @@ public class Mesa implements Jogada {
 
     public void setVencedorUltimaRodada(Jogador player) {
         this.vendedorUltimaRodada = player;
+    }
+
+    public void setCartasDaMesa(ArrayList<Carta> selecionadas) {
+        this.cartasDaMesa = selecionadas;
+    }
+
+    public void setPresidente(Jogador vencedorUltimaRodada) {
+        this.presidente = vencedorUltimaRodada;
+    }
+    
+    public Jogador getPresidente(){
+        return this.presidente;
+    }
+
+    public void setCu(Jogador cu) {
+        this.cu = cu;
+    }
+    
+    public Jogador getCu(){
+        return this.cu;
     }
     
     

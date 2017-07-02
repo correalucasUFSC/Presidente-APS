@@ -147,6 +147,23 @@ public class Controlador {
             this.atorJogador.bloqueiaTelaJogador(2);
         }
     }
+    
+    public void iniciaNovaRodada(){
+        ArrayList<Carta> baralho = this.criaBaralho();
+        baralho = this.embaralha(baralho);
+        ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
+        ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
+        this.jogador.setMao(maoJogador1);
+        this.adversario.setMao(maoJogador2);
+        this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
+        Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador() ?
+                this.mesa.getJogador() : this.mesa.getAdversario();
+        this.mesa.setCu(cu);
+        this.trocarCartas();
+        this.atorNetGames.enviarJogada(this.mesa);
+        this.atorJogador.atualizaTelaPosJogada(this.mesa);
+        
+    }
 
     /** 
      * Método para limpar tudo
@@ -269,5 +286,28 @@ public class Controlador {
 
     public void setDaVez(boolean b) {
         this.daVez = false;
+    }
+
+    private void trocarCartas() {
+        Jogador presidente = this.mesa.getPresidente();
+        Jogador cu = this.mesa.getCu();
+        ArrayList<Carta> maoPresidente = presidente.getMao();
+        ArrayList<Carta> maoCu = cu.getMao();
+        Carta cartaMaior = new Carta(0);
+        for(Carta carta : maoCu){
+            if(carta.getValor() > cartaMaior.getValor()){
+                cartaMaior = carta;
+            }            
+        }
+        maoCu.remove(cartaMaior);
+        Carta cartaMenor = new Carta(99);
+        for(Carta carta : maoPresidente){
+            if(carta.getValor() < cartaMenor.getValor()){
+                cartaMenor = carta;
+            }
+        }
+        maoPresidente.remove(cartaMenor);
+        maoCu.add(cartaMenor);
+        maoPresidente.add(cartaMaior);
     }
 }
