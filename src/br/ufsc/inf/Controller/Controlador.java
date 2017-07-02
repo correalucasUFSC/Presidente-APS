@@ -170,6 +170,8 @@ public class Controlador {
                 this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
                 this.atorJogador.bloqueiaTelaJogador(2);
             }
+        } else if (mesa.getTipoJogada() == 3){
+            //informa resultado do vencedor da partida
         }
 
     }
@@ -185,7 +187,7 @@ public class Controlador {
         this.addVitoria();
         this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
         Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador()
-                ? this.mesa.getAdversario(): this.mesa.getJogador();
+                ? this.mesa.getAdversario() : this.mesa.getJogador();
         this.mesa.setCu(cu);
         this.trocarCartas();
         this.mesa.setTipoJogada(2);
@@ -348,5 +350,19 @@ public class Controlador {
         maoPresidente.remove(cartaMenor);
         maoCu.add(cartaMenor);
         maoPresidente.add(cartaMaior);
+    }
+
+    public void finalizaPartida() {
+        //variavel resultado
+        if(this.jogador == this.getMesa().getVencedor()){
+            //resultado = constante para informar que o jogador venceu
+        }
+        else{
+            //resultado = constante para informar que o adversario venceu
+        }
+        this.atorJogador.bloqueiaTelaJogador(1);
+        this.atorJogador.bloqueiaTelaJogador(2);
+        //this.atorJogador.informarResultado(resultado);
+        this.mesa.setTipoJogada(3);
     }
 }

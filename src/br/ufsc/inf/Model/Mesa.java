@@ -124,6 +124,10 @@ public class Mesa implements Jogada {
     public int getTipoJogada() {
         return this.tipoJogada;
     }
+
+    public Jogador getVencedor() {
+        return this.vencedor;
+    }
     
     
 }

@@ -242,10 +242,15 @@ public class AtorJogador {
             }
             else{
                 this.owner.getMesa().setVencedor(player);
+                this.owner.finalizaPartida();
             }
         }
         else{
             this.owner.enviarJogada();
         }
+    }
+
+    public void informarResultado() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
