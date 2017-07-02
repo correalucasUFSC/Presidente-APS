@@ -145,9 +145,8 @@ public class Controlador {
             this.daVez = false;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
-            String jogadorTipo = this.ordem == 1 ? "jogador" : "adversario";
-            Jogador jogador = this.ordem == 1 ? this.mesa.getJogador() : this.mesa.getAdversario();
-            this.atorJogador.mudaQuantidadeVitoriasJogador(jogador.getRodadasGanhas(), jogadorTipo);
+            this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getAdversario().getRodadasGanhas(), "adversario");
+            this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getJogador().getRodadasGanhas(), "jogador");
             this.atorJogador.atualizaTelaPosJogada(mesa);
             this.atorJogador.bloqueiaTelaJogador(this.ordem);
             this.atorNetGames.enviarJogada(mesa);
