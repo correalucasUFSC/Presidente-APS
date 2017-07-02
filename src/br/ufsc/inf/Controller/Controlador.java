@@ -171,7 +171,7 @@ public class Controlador {
                 this.atorJogador.bloqueiaTelaJogador(2);
             }
         } else if (mesa.getTipoJogada() == 3){
-            //informa resultado do vencedor da partida
+            this.atorJogador.informarResultado(Constantes.VENCEDOR_JOGO);
         }
 
     }
