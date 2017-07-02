@@ -183,7 +183,7 @@ public class Controlador {
         this.addVitoria();
         this.mesa.setPresidente(this.mesa.getVencedorUltimaRodada());
         Jogador cu = this.mesa.getPresidente() == this.mesa.getJogador()
-                ? this.mesa.getJogador() : this.mesa.getAdversario();
+                ? this.mesa.getAdversario(): this.mesa.getJogador();
         this.mesa.setCu(cu);
         this.trocarCartas();
         this.mesa.setTipoJogada(2);
