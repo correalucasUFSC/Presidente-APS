@@ -145,9 +145,11 @@ public class Controlador {
             this.daVez = false;
             this.adversario = this.mesa.getAdversario();
             this.jogador = this.mesa.getJogador();
+            String jogadorTipo = this.ordem == 1 ? "jogador" : "adversario";
+            Jogador jogador = this.ordem == 1 ? this.mesa.getJogador() : this.mesa.getAdversario();
+            this.atorJogador.mudaQuantidadeVitoriasJogador(jogador.getRodadasGanhas(), jogadorTipo);
             this.atorJogador.atualizaTelaPosJogada(mesa);
             this.atorJogador.bloqueiaTelaJogador(this.ordem);
-            
             this.atorNetGames.enviarJogada(mesa);
         } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
             if (ordem == 1 || !primeiraJogada) {
