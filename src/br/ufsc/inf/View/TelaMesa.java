@@ -745,7 +745,8 @@ public class TelaMesa extends javax.swing.JFrame {
      * @param cartasMao Lista de cartas.
      */
     private void colocaCartasDaMao(String jogador, ArrayList<Carta> cartasMao){           
-        limpaCartaJogador(jogador);  
+        limpaCartaJogador(jogador);
+        bloqueiaMesa(jogador);
         int tamanho = cartasMao.size();
         if(jogador.toLowerCase().equals("adversario")){
             if(tamanho >= 1) cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource(getImagemCarta(cartasMao.get(0).getCaminho()))));
@@ -1061,6 +1062,7 @@ public class TelaMesa extends javax.swing.JFrame {
                     AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaAdversario0);
                     cartaAdversario0.addMouseListener(acaoPersonalizada0);
                 default:
+                    System.out.println("adicionou evento em " +qntCartas);
                     break;
             }
             
@@ -1175,7 +1177,12 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaMesa0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
         cartaMesa2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
-        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));        
+        cartaMesa3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png")));
+        cartaMesa0.setToolTipText("");
+        cartaMesa1.setToolTipText("");
+        cartaMesa2.setToolTipText("");
+        cartaMesa3.setToolTipText("");
+        
     }
     
     /**
@@ -1280,7 +1287,11 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaJogador6.setText("");
         cartaJogador7.setText("");  
         cartaJogador8.setText("");
-        cartaJogador9.setText("");     
+        cartaJogador9.setText("");   
+        cartaMesa0.setToolTipText("");
+        cartaMesa1.setToolTipText("");
+        cartaMesa2.setToolTipText("");
+        cartaMesa3.setToolTipText("");
     }
     
     

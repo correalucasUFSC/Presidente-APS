@@ -149,8 +149,8 @@ public class Controlador {
             this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getJogador().getRodadasGanhas(), "jogador");
             this.atorJogador.atualizaTelaPosJogada(mesa);
             this.atorJogador.bloqueiaTelaJogador(this.ordem);
-            this.atorJogador.informarResultado(Constantes.VOCE_PERDEU_RODADA);
             this.atorNetGames.enviarJogada(mesa);
+            this.atorJogador.informarResultado(Constantes.VOCE_PERDEU_RODADA);
         } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
             if (ordem == 1 || !primeiraJogada) {
                 this.mesa = mesa;
