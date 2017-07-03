@@ -275,24 +275,24 @@ public class Controlador {
         }
     }
     
-    
     public void clickPos(int posicao) {
+        ArrayList<Carta> mao = null;
         if (this.ordem == 1) {
-            switch (posicao) {
-                case Constantes.SOLICITACAO_PULAR_VEZ:
-                    this.solicitacaoPularJogada();
-                    break;
-                case Constantes.SOLICITACAO_ENVIAR_JOGADA:
-                    this.solicitacaoTratarJogada();
-                    break;
-                default:
-                    List<Carta> mao = this.mesa.getJogador().getMao();
-                    this.clickCarta(mao, posicao);
-                    break;
-            }            
-        } else if (this.ordem == 2) {
-            List<Carta> mao = this.mesa.getAdversario().getMao();
+            mao = this.mesa.getJogador().getMao();
             this.clickCarta(mao, posicao);
+        } else if (this.ordem == 2) {
+            mao = this.mesa.getAdversario().getMao();            
+        }
+        switch(posicao){
+            case Constantes.SOLICITACAO_PULAR_VEZ:
+                this.solicitacaoPularJogada();
+                break;
+            case Constantes.SOLICITACAO_ENVIAR_JOGADA:
+                this.solicitacaoTratarJogada();
+                break;
+            default:
+                this.clickCarta(mao, posicao);
+                break;
         }
     }
     
