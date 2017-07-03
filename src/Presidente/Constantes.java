@@ -39,6 +39,7 @@ public class Constantes {
     public static final int PERDEDOR_JOGADA = 18;
     public static final int VENCEDOR_JOGO = 19;
     public static final int PERDEDOR_JOGO = 20;
+    public static final int NUMERO_MAXIMO_DE_CARTAS_SELECIONADO = 21;
     //---------Numericos
     
     //---------Strings
@@ -67,6 +68,7 @@ public class Constantes {
     public static final String PERDEDOR_JOGADA_STRING = "Você perdeu a jogada. :(";
     public static final String VENCEDOR_JOGO_STRING = "PARABÊNS!!! Você ganhou o jogo!";
     public static final String PERDEDOR_JOGO_STRING = "Parece que você não teve sorte dessa vez. Você perdeu o jogo.";
+    public static final String NUMERO_MAXIMO_DE_CARTAS_SELECIONADO_STRING = "Você selecionou o limite de cartas para uma jogada.";
     
     //---------Strings
     

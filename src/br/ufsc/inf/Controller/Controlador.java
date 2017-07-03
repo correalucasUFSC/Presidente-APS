@@ -279,7 +279,6 @@ public class Controlador {
         ArrayList<Carta> mao = null;
         if (this.ordem == 1) {
             mao = this.mesa.getJogador().getMao();
-            this.clickCarta(mao, posicao);
         } else if (this.ordem == 2) {
             mao = this.mesa.getAdversario().getMao();            
         }

@@ -89,7 +89,7 @@ public class TelaMesa extends javax.swing.JFrame {
         painelMesa.setBorder(new javax.swing.border.MatteBorder(null));
 
         cartaAdversario0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario0.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario0.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario0.setToolTipText("0");
         cartaAdversario0.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -97,133 +97,133 @@ public class TelaMesa extends javax.swing.JFrame {
         cartaAdversario0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario1.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario1.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario1.setToolTipText("1");
         cartaAdversario1.setDisabledIcon(null);
         cartaAdversario1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario2.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario2.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario2.setToolTipText("2");
         cartaAdversario2.setDisabledIcon(null);
         cartaAdversario2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario3.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario3.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario3.setToolTipText("3");
         cartaAdversario3.setDisabledIcon(null);
         cartaAdversario3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario4.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario4.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario4.setToolTipText("4");
         cartaAdversario4.setDisabledIcon(null);
         cartaAdversario4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario5.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario5.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario5.setToolTipText("5");
         cartaAdversario5.setDisabledIcon(null);
         cartaAdversario5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario6.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario6.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario6.setToolTipText("6");
         cartaAdversario6.setDisabledIcon(null);
         cartaAdversario6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario7.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario7.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario7.setToolTipText("7");
         cartaAdversario7.setDisabledIcon(null);
         cartaAdversario7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario8.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario8.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario8.setToolTipText("8");
         cartaAdversario8.setDisabledIcon(null);
         cartaAdversario8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaAdversario9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaAdversario9.setForeground(new java.awt.Color(255, 0, 0));
+        cartaAdversario9.setForeground(new java.awt.Color(0, 51, 255));
         cartaAdversario9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaAdversario9.setToolTipText("9");
         cartaAdversario9.setDisabledIcon(null);
         cartaAdversario9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador0.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador0.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador0.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador0.setToolTipText("0");
         cartaJogador0.setDisabledIcon(null);
         cartaJogador0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador1.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador1.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador1.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador1.setToolTipText("1");
         cartaJogador1.setDisabledIcon(null);
         cartaJogador1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador2.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador2.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador2.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador2.setToolTipText("2");
         cartaJogador2.setDisabledIcon(null);
         cartaJogador2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador3.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador3.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador3.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador3.setToolTipText("3");
         cartaJogador3.setDisabledIcon(null);
         cartaJogador3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador4.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador4.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador4.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador4.setToolTipText("4");
         cartaJogador4.setDisabledIcon(null);
         cartaJogador4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador5.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador5.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador5.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador5.setToolTipText("5");
         cartaJogador5.setDisabledIcon(null);
         cartaJogador5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador6.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador6.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador6.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador6.setToolTipText("6");
         cartaJogador6.setDisabledIcon(null);
         cartaJogador6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador7.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador7.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador7.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador7.setToolTipText("7");
         cartaJogador7.setDisabledIcon(null);
         cartaJogador7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador8.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador8.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador8.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador8.setToolTipText("8");
         cartaJogador8.setDisabledIcon(null);
         cartaJogador8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         cartaJogador9.setFont(new java.awt.Font("Tahoma", 1, 60)); // NOI18N
-        cartaJogador9.setForeground(new java.awt.Color(255, 0, 0));
+        cartaJogador9.setForeground(new java.awt.Color(0, 51, 255));
         cartaJogador9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufsc/inf/View/imgs/carta-branca.png"))); // NOI18N
         cartaJogador9.setToolTipText("9");
         cartaJogador9.setDisabledIcon(null);
@@ -358,11 +358,9 @@ public class TelaMesa extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelMesaLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(vezJogador)
                                 .addGap(217, 259, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelMesaLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(painelMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(pularJogada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(fazerJogada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -616,6 +614,9 @@ public class TelaMesa extends javax.swing.JFrame {
                 break;   
             case Constantes.PERDEDOR_JOGO:
                 JOptionPane.showMessageDialog(this, Constantes.PERDEDOR_JOGO_STRING);
+                break;     
+            case Constantes.NUMERO_MAXIMO_DE_CARTAS_SELECIONADO:
+                JOptionPane.showMessageDialog(this, Constantes.NUMERO_MAXIMO_DE_CARTAS_SELECIONADO_STRING);
                 break;             
         }
     }
@@ -1062,7 +1063,6 @@ public class TelaMesa extends javax.swing.JFrame {
                     AcaoPersonalizada acaoPersonalizada0 = new AcaoPersonalizada(cartaAdversario0);
                     cartaAdversario0.addMouseListener(acaoPersonalizada0);
                 default:
-                    System.out.println("adicionou evento em " +qntCartas);
                     break;
             }
             
@@ -1095,7 +1095,7 @@ public class TelaMesa extends javax.swing.JFrame {
                 fazerJogada.setEnabled(true);
                 pularJogada.setEnabled(false);            
             } else {
-                //VOCÊ SELECIONOU O MÁXIMO DE CARTAS POSSIVEIS.
+                informarResultado(Constantes.NUMERO_MAXIMO_DE_CARTAS_SELECIONADO);
             }
         }
     }
@@ -1151,7 +1151,8 @@ public class TelaMesa extends javax.swing.JFrame {
         if(cartasSelecionadas > 0){
             fazerJogada.setEnabled(false);
             pularJogada.setEnabled(false);
-            this.atorJogador.solicitacaoTratarJogada();
+            this.atorJogador.clickPos(Constantes.SOLICITACAO_ENVIAR_JOGADA);
+            //this.atorJogador.solicitacaoTratarJogada();
         } else {
             informarResultado(Constantes.VOCE_NAO_TEM_CARTAS_SELECIONADAS);
         }
@@ -1164,7 +1165,8 @@ public class TelaMesa extends javax.swing.JFrame {
         if(cartasSelecionadas == 0){
             fazerJogada.setEnabled(false);
             pularJogada.setEnabled(false);
-            this.atorJogador.solicitacaoPularJogada();
+            this.atorJogador.clickPos(Constantes.SOLICITACAO_PULAR_VEZ);
+            //this.atorJogador.solicitacaoPularJogada();
         } else {
             informarResultado(Constantes.VOCE_TEM_CARTAS_SELECIONADAS);
         }
