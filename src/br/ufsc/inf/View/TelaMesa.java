@@ -1078,7 +1078,7 @@ public class TelaMesa extends javax.swing.JFrame {
         String posicao = carta.getToolTipText();
         Integer pos = Integer.parseInt(posicao);
         if(carta.getText().equals("X")){
-            this.atorJogador.cartaSelecionadaPos(pos);
+            this.atorJogador.clickPos(pos);
             carta.setText("");
             this.cartasSelecionadas--;
             if(this.cartasSelecionadas == 0) {
@@ -1089,7 +1089,7 @@ public class TelaMesa extends javax.swing.JFrame {
             }
         } else {
             if(cartasSelecionadas < MAX_CARTAS_SELECIONADAS){
-                this.atorJogador.cartaSelecionadaPos(pos);
+                this.atorJogador.clickPos(pos);
                 carta.setText("X");   
                 this.cartasSelecionadas++;
                 fazerJogada.setEnabled(true);

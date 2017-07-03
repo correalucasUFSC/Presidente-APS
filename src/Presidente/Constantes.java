@@ -28,6 +28,8 @@ public class Constantes {
     public static final int JOGO_EM_ANDAMENTO = 7;
     public static final int INICIAR_PARTIDA_FALHOU = 8;
     public static final int SOLICITADO_INICIO_PARTIDA = 9;
+    public static final int SOLICITACAO_ENVIAR_JOGADA = 10;
+    public static final int SOLICITACAO_PULAR_VEZ = 11;
     public static final int JOGADA_INVALIDA = 12;
     public static final int VOCE_GANHOU_RODADA = 13;
     public static final int VOCE_PERDEU_RODADA = 14;

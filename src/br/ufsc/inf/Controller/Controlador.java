@@ -112,17 +112,17 @@ public class Controlador {
     public void iniciarNovaPartida(Integer ordem) {
         this.limpar();
         this.setOrdens(ordem);
-        this.jogoEmAndamento = true;
+        String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
         if (this.ordem == 1) {
             this.daVez = true;
-            String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
+            this.adversario = new Jogador(nomeAdversario);
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
             ArrayList<Carta> baralho = this.criaBaralho();
             baralho = this.embaralha(baralho);
             ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
             ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
-            this.adversario = new Jogador(maoJogador2, nomeAdversario);
             this.jogador.setMao(maoJogador1);
+            this.adversario.setMao(maoJogador2);
             this.mesa.setJogador(this.jogador);
             this.mesa.setAdversario(this.adversario);
             this.atorNetGames.enviarJogada(this.mesa);
@@ -146,20 +146,20 @@ public class Controlador {
     public void verificaEstadoPartida() {
         ArrayList<Carta> maoAVerificar;
         Jogador player;
-        String jogadorOuAdversario;
+        String jogador;
         if(this.ordem == 1){
             player = this.mesa.getJogador();
             maoAVerificar = player.getMao();  
-            jogadorOuAdversario = Constantes.JOGADOR;
+            jogador = Constantes.JOGADOR;
         }
         else{
             player = this.mesa.getAdversario();
             maoAVerificar = player.getMao();
-            jogadorOuAdversario = Constantes.ADVERSARIO;
+            jogador = Constantes.ADVERSARIO;
         }
         if(maoAVerificar.isEmpty()){
             player.aumentaRodadasGanhas();
-            this.atorJogador.mudaQuantidadeVitoriasJogador(player.getRodadasGanhas(), jogadorOuAdversario);
+            this.atorJogador.mudaQuantidadeVitoriasJogador(player.getRodadasGanhas(), jogador);
             if(player.getRodadasGanhas() < 3){
                 this.mesa.setVencedorUltimaRodada(player);
                 this.iniciaNovaRodada();
@@ -275,10 +275,21 @@ public class Controlador {
         }
     }
     
-    public void cartaSelecionadaPos(int posicao) {
+    
+    public void clickPos(int posicao) {
         if (this.ordem == 1) {
-            List<Carta> mao = this.mesa.getJogador().getMao();
-            this.clickCarta(mao, posicao);
+            switch (posicao) {
+                case Constantes.SOLICITACAO_PULAR_VEZ:
+                    this.solicitacaoPularJogada();
+                    break;
+                case Constantes.SOLICITACAO_ENVIAR_JOGADA:
+                    this.solicitacaoTratarJogada();
+                    break;
+                default:
+                    List<Carta> mao = this.mesa.getJogador().getMao();
+                    this.clickCarta(mao, posicao);
+                    break;
+            }            
         } else if (this.ordem == 2) {
             List<Carta> mao = this.mesa.getAdversario().getMao();
             this.clickCarta(mao, posicao);
@@ -343,7 +354,6 @@ public class Controlador {
                     this.bloqueiaTelaJogador(2);
                 }   break;
             case 3:
-                this.jogoEmAndamento = false;
                 this.atorJogador.informarResultado(Constantes.PERDEDOR_JOGO);
                 this.bloqueiaTelaJogador(1);
                 this.bloqueiaTelaJogador(2);
@@ -541,8 +551,7 @@ public class Controlador {
         }
     }
 
-    public void finalizaPartida() {
-        this.jogoEmAndamento = false;
+    public void finalizaPartida() {        
         this.bloqueiaTelaJogador(1);
         this.bloqueiaTelaJogador(2);
         this.mesa.setTipoJogada(3);

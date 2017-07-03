@@ -62,8 +62,8 @@ public class AtorJogador {
         this.owner.solicitacaoPularJogada();
     }
 
-    public void cartaSelecionadaPos(int posicao) {
-        this.owner.cartaSelecionadaPos(posicao);
+    public void clickPos(int posicao) {
+        this.owner.clickPos(posicao);
     }
 
     public void mostraBotoes() {
