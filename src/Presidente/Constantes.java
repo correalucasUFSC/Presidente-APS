@@ -40,6 +40,8 @@ public class Constantes {
     //---------Numericos
     
     //---------Strings
+    public static final String ADVERSARIO = "adversario";
+    public static final String JOGADOR = "jogador";
     public static final String CONEXAO_EXITO_STRING = "Conexao efetuada com exito";
     public static final String CONEXAO_FALHOU_STRING = "Conexao falhou";
     public static final String JA_CONECTADO_STRING = "Ja Conectado";

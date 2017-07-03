@@ -112,24 +112,193 @@ public class Controlador {
     public void iniciarNovaPartida(Integer ordem) {
         this.limpar();
         this.setOrdens(ordem);
-        String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
+        this.jogoEmAndamento = true;
         if (this.ordem == 1) {
             this.daVez = true;
-            this.adversario = new Jogador(nomeAdversario);
+            String nomeAdversario = this.atorNetGames.obterNomeAdversario(this.ordemAdversario);
             this.atorJogador.informarNomeAdversario(this.adversario.getNome());
             ArrayList<Carta> baralho = this.criaBaralho();
             baralho = this.embaralha(baralho);
             ArrayList<Carta> maoJogador1 = this.distribuiMao(this.ordem, baralho);
             ArrayList<Carta> maoJogador2 = this.distribuiMao(2, baralho);
+            this.adversario = new Jogador(maoJogador2, nomeAdversario);
             this.jogador.setMao(maoJogador1);
-            this.adversario.setMao(maoJogador2);
             this.mesa.setJogador(this.jogador);
             this.mesa.setAdversario(this.adversario);
             this.atorNetGames.enviarJogada(this.mesa);
-            this.atorJogador.atualizaTelaPosJogada(this.mesa);
-            this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
-            this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
+            this.atualizaTelaPosJogada(this.mesa);
+            this.atualizaNomeJogador(Constantes.JOGADOR, this.jogador.getNome());
+            this.atualizaNomeJogador(Constantes.ADVERSARIO, this.adversario.getNome());
             this.atorJogador.mostraBotoes();
+        }
+    }
+    
+    public void bloqueiaTelaJogador(int ordem){
+        if(ordem == 1){
+            this.atorJogador.bloqueiaMesa(Constantes.JOGADOR);
+            this.atorJogador.trocaVez(Constantes.ADVERSARIO);
+        } else {
+            this.atorJogador.bloqueiaMesa(Constantes.ADVERSARIO);
+            this.atorJogador.trocaVez(Constantes.JOGADOR);
+        }
+    }
+    
+    public void verificaEstadoPartida() {
+        ArrayList<Carta> maoAVerificar;
+        Jogador player;
+        String jogadorOuAdversario;
+        if(this.ordem == 1){
+            player = this.mesa.getJogador();
+            maoAVerificar = player.getMao();  
+            jogadorOuAdversario = Constantes.JOGADOR;
+        }
+        else{
+            player = this.mesa.getAdversario();
+            maoAVerificar = player.getMao();
+            jogadorOuAdversario = Constantes.ADVERSARIO;
+        }
+        if(maoAVerificar.isEmpty()){
+            player.aumentaRodadasGanhas();
+            this.atorJogador.mudaQuantidadeVitoriasJogador(player.getRodadasGanhas(), jogadorOuAdversario);
+            if(player.getRodadasGanhas() < 3){
+                this.mesa.setVencedorUltimaRodada(player);
+                this.iniciaNovaRodada();
+            }
+            else{
+                this.mesa.setVencedor(player);
+                this.finalizaPartida();
+            }
+        }
+        else{
+            this.enviarJogada();
+        }
+    }
+    
+    public boolean tratarJogada(ArrayList<Carta> mao) {
+        int retorno = Constantes.JOGADA_INVALIDA;
+        boolean continua = false;
+        ArrayList<Carta> selecionadas = new ArrayList<>();
+        for (Carta carta : mao) {
+            if (carta.isSelecionada()) {
+                selecionadas.add(carta);
+            }
+        }
+        if(this.mesa.getCartasMesa().size() > 0){
+            if(this.mesa.getCartasMesa().size() == selecionadas.size()){
+                continua = true;
+            }
+            else{
+                //retorna jogada inválida
+                this.atorJogador.informarResultado(retorno);
+                return false;
+            }
+        }
+        if (this.mesa.getCartasMesa().isEmpty() || continua){
+            int valorConjunto = selecionadas.get(0).getValor();
+                for (Carta carta : selecionadas) {
+                    if (carta.getValor() != valorConjunto) {
+                        //erro conjunto precisa ter cartas com mesmo valor
+                        this.atorJogador.informarResultado(retorno);
+                        return false;
+                    }
+                }
+                int valorConjuntoMesa = this.mesa.getCartasMesa().isEmpty() ?
+                        0 : this.mesa.getCartasMesa().get(0).getValor();
+                if(valorConjunto > valorConjuntoMesa){
+                    //jogada valida           
+                    this.mesa.setCartasDaMesa(selecionadas);
+                    mao.removeAll(selecionadas);
+                    return true;
+                }
+                else{
+                    //jogada invalida
+                    this.atorJogador.informarResultado(retorno);
+                    return false;
+                }
+        }
+        return false;
+    }
+    
+    public void clickCarta(List<Carta> mao, int posicao) {
+        Carta cartaSelecionada = mao.get(posicao);
+        if (cartaSelecionada.isSelecionada()) {
+            cartaSelecionada.tiraSelecao();
+        } else {
+            cartaSelecionada.seleciona();
+        }
+    }
+    
+    public void solicitacaoPularJogada() {
+        Jogador ultimoAJogar = this.mesa.getUltimoJogadorQueSoltouCarta();
+        Jogador atual = this.ordem == 1 ? this.mesa.getJogador() : this.mesa.getAdversario();
+        if(ultimoAJogar == atual){
+            this.mesa.getCartasMesa().clear();
+            this.atorJogador.informarResultado(Constantes.GANHADOR_JOGADA);
+            if(this.ordem == 1){
+                this.atorJogador.bloqueiaMesa(Constantes.JOGADOR);
+            } else {
+                this.atorJogador.bloqueiaMesa(Constantes.ADVERSARIO);
+            }            
+            this.atualizaTelaPosJogada(this.mesa);
+        } else {
+            this.setDaVez(false);
+            this.atualizaTelaPosJogada(this.mesa);
+            this.verificaEstadoPartida();  
+        }
+    }
+    
+    public void atualizaTelaPosJogada(Mesa mesa) {
+        if (this.ordem == 1) {
+            this.atorJogador.trocaVez(Constantes.JOGADOR);
+            ArrayList<Carta> cartasJogador = mesa.getJogador().getMao();
+            int cartasAdversario = mesa.getAdversario().getMao().size();
+            ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
+            this.atorJogador.atualizaTelaJogador(cartasJogador, cartasAdversario, cartasMesa);
+            if(this.mesa.getJogador() == this.mesa.getPresidente()){
+                this.atorJogador.trocaPresidente(Constantes.JOGADOR);
+            }
+            else if(this.mesa.getPresidente() != null){
+                this.atorJogador.trocaPresidente(Constantes.ADVERSARIO);
+            }
+        } else {
+            this.atorJogador.trocaVez(Constantes.ADVERSARIO);
+            int cartasJogador = mesa.getJogador().getMao().size();
+            ArrayList<Carta> cartasAdversario = mesa.getAdversario().getMao();
+            ArrayList<Carta> cartasMesa = mesa.getCartasMesa();
+            this.atorJogador.atualizaTelaAdversario(cartasJogador, cartasAdversario, cartasMesa);
+            if(this.mesa.getAdversario() == this.mesa.getPresidente()){
+                this.atorJogador.trocaPresidente(Constantes.ADVERSARIO);
+            }
+            else if(this.mesa.getPresidente() != null){
+                this.atorJogador.trocaPresidente(Constantes.JOGADOR);
+            }
+        }
+    }
+    
+    public void cartaSelecionadaPos(int posicao) {
+        if (this.ordem == 1) {
+            List<Carta> mao = this.mesa.getJogador().getMao();
+            this.clickCarta(mao, posicao);
+        } else if (this.ordem == 2) {
+            List<Carta> mao = this.mesa.getAdversario().getMao();
+            this.clickCarta(mao, posicao);
+        }
+    }
+    
+    public void solicitacaoTratarJogada() {
+        boolean jogadaValida;
+        Jogador atual;
+        if (this.ordem == 1) {
+            jogadaValida = this.tratarJogada(this.mesa.getJogador().getMao());
+            atual = this.mesa.getJogador();
+        } else {
+            jogadaValida = this.tratarJogada(this.mesa.getAdversario().getMao());
+            atual = this.mesa.getAdversario();
+        }
+        if(jogadaValida){
+            this.mesa.trocaUltimoJogadorQueSoltouCarta(atual);
+            this.atualizaTelaPosJogada(this.mesa);
+            this.verificaEstadoPartida();
         }
     }
 
@@ -139,39 +308,48 @@ public class Controlador {
      * @param mesa Mesa - Recebe a mesa inteira do outro jogador.
      */
     public void receberJogada(Mesa mesa) {
-        if (mesa.getTipoJogada() == 2) {
-            this.mesa = mesa;
-            mesa.setTipoJogada(0);
-            this.daVez = false;
-            this.adversario = this.mesa.getAdversario();
-            this.jogador = this.mesa.getJogador();
-            this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getAdversario().getRodadasGanhas(), "adversario");
-            this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getJogador().getRodadasGanhas(), "jogador");
-            this.atorJogador.atualizaTelaPosJogada(mesa);
-            this.atorJogador.bloqueiaTelaJogador(this.ordem);
-            this.atorNetGames.enviarJogada(mesa);
-            this.atorJogador.informarResultado(Constantes.VOCE_PERDEU_RODADA);
-        } else if (mesa.getTipoJogada() == 1 || mesa.getTipoJogada() == 0) {
-            if (ordem == 1 || !primeiraJogada) {
+        switch (mesa.getTipoJogada()) {
+            case 2:
                 this.mesa = mesa;
-                this.daVez = true;
+                mesa.setTipoJogada(0);
+                this.daVez = false;
                 this.adversario = this.mesa.getAdversario();
                 this.jogador = this.mesa.getJogador();
-
-                this.atorJogador.atualizaTelaPosJogada(mesa);
-            } else {
-                this.primeiraJogada = false;
-                this.mesa = mesa;
-                this.adversario = this.mesa.getAdversario();
-                this.jogador = this.mesa.getJogador();
-                this.setOrdens(2);
-                this.atorJogador.atualizaTelaPosJogada(mesa);
-                this.atorJogador.atualizaNomeJogador("jogador", this.jogador.getNome());
-                this.atorJogador.atualizaNomeJogador("adversario", this.adversario.getNome());
-                this.atorJogador.bloqueiaTelaJogador(2);
-            }
-        } else if (mesa.getTipoJogada() == 3){
-            this.atorJogador.informarResultado(Constantes.VENCEDOR_JOGO);
+                this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getAdversario().getRodadasGanhas(), "adversario");
+                this.atorJogador.mudaQuantidadeVitoriasJogador(this.mesa.getJogador().getRodadasGanhas(), "jogador");
+                this.atualizaTelaPosJogada(mesa);
+                this.bloqueiaTelaJogador(this.ordem);
+                this.atorNetGames.enviarJogada(mesa);
+                this.atorJogador.informarResultado(Constantes.VOCE_PERDEU_RODADA);
+                break;
+            case 1:
+            case 0:
+                if (ordem == 1 || !primeiraJogada) {
+                    this.mesa = mesa;
+                    this.daVez = true;
+                    this.adversario = this.mesa.getAdversario();
+                    this.jogador = this.mesa.getJogador();
+                    
+                    this.atualizaTelaPosJogada(mesa);
+                } else {
+                    this.primeiraJogada = false;
+                    this.mesa = mesa;
+                    this.adversario = this.mesa.getAdversario();
+                    this.jogador = this.mesa.getJogador();
+                    this.setOrdens(2);
+                    this.atualizaTelaPosJogada(mesa);
+                    this.atualizaNomeJogador(Constantes.JOGADOR, this.jogador.getNome());
+                    this.atualizaNomeJogador(Constantes.ADVERSARIO, this.adversario.getNome());
+                    this.bloqueiaTelaJogador(2);
+                }   break;
+            case 3:
+                this.jogoEmAndamento = false;
+                this.atorJogador.informarResultado(Constantes.PERDEDOR_JOGO);
+                this.bloqueiaTelaJogador(1);
+                this.bloqueiaTelaJogador(2);
+                break;
+            default:
+                break;
         }
 
     }
@@ -192,7 +370,7 @@ public class Controlador {
         this.trocarCartas();
         this.mesa.setTipoJogada(2);
         this.atorNetGames.enviarJogada(this.mesa);
-        this.atorJogador.atualizaTelaPosJogada(this.mesa);
+        this.atualizaTelaPosJogada(this.mesa);
         this.atorJogador.informarResultado(Constantes.VOCE_GANHOU_RODADA);
     }
 
@@ -241,7 +419,7 @@ public class Controlador {
      * mão do jogador).
      */
     private ArrayList<Carta> distribuiMao(int ordem, ArrayList<Carta> baralho) {
-        ArrayList<Carta> baralhoTemp = new ArrayList<Carta>();
+        ArrayList<Carta> baralhoTemp = new ArrayList<>();
         if (ordem == 1) {
             for (int i = 0; i <= 9; i++) {
                 baralhoTemp.add(baralho.get(i));
@@ -299,7 +477,7 @@ public class Controlador {
     public void enviarJogada() {
         this.mesa.setTipoJogada(1);
         this.daVez = false;
-        this.atorJogador.bloqueiaTelaJogador(this.ordem);
+        this.bloqueiaTelaJogador(this.ordem);
         this.atorNetGames.enviarJogada(this.mesa);
     }
 
@@ -352,16 +530,23 @@ public class Controlador {
         maoCu.add(cartaMenor);
         maoPresidente.add(cartaMaior);
     }
+    
+    public void atualizaNomeJogador(String jogador, String nome) {
+        if (jogador.toLowerCase().equals(Constantes.JOGADOR)) {
+            this.atorJogador.trocaNomeJogador(nome);
+            this.atorJogador.aumentaVitoria(Constantes.JOGADOR, 0);
+        } else {
+            this.atorJogador.trocaNomeAdversario(nome);
+            this.atorJogador.aumentaVitoria(Constantes.ADVERSARIO, 0);
+        }
+    }
 
     public void finalizaPartida() {
-        if(this.jogador == this.getMesa().getVencedor()){
-            this.atorJogador.informarResultado(Constantes.VENCEDOR_JOGO);
-        }
-        else{
-            this.atorJogador.informarResultado(Constantes.PERDEDOR_JOGO);
-        }
-        this.atorJogador.bloqueiaTelaJogador(1);
-        this.atorJogador.bloqueiaTelaJogador(2);
+        this.jogoEmAndamento = false;
+        this.bloqueiaTelaJogador(1);
+        this.bloqueiaTelaJogador(2);
         this.mesa.setTipoJogada(3);
+        this.atorNetGames.enviarJogada(this.mesa);
+        this.atorJogador.informarResultado(Constantes.VENCEDOR_JOGO);
     }
 }

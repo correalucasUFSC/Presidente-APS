@@ -27,6 +27,11 @@ public class Jogador implements Jogada {
         this.nome = nome;
     }
 
+    public Jogador(ArrayList<Carta> maoJogador2, String nomeAdversario) {
+        this.mao = maoJogador2;
+        this.nome = nomeAdversario;
+    }
+
     /** Método para pegar nome do jogador.
      * @return String - Nome do jogador.
      */
