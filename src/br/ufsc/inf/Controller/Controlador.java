@@ -241,7 +241,7 @@ public class Controlador {
             }            
             this.atualizaTelaPosJogada(this.mesa);
         } else {
-            this.setDaVez(false);
+            this.daVez = false;
             this.atualizaTelaPosJogada(this.mesa);
             this.verificaEstadoPartida();  
         }
